@@ -1,0 +1,42 @@
+# Build artifacts
+*.so
+*.exe
+hc-*-plugin
+/hc-auth-plugin/
+/hc-storage-plugin/
+/hc-email-plugin/
+/hc-cache-plugin/
+/hc-realtime-plugin/
+/hc-rate-limit-plugin/
+/hc-search-plugin/
+/hc-webhook-plugin/
+/hc-push-notification-plugin/
+/hc-scheduler-plugin/
+/hc-logging-plugin/
+/hc-analytics-plugin/
+/hc-sms-plugin/
+/hc-payment-plugin/
+/hc-ai-plugin/
+
+# Go
+*.test
+*.out
+vendor/
+
+# Node / UI
+node_modules/
+dist/
+*.umd.js
+package-lock.json
+pnpm-lock.yaml
+
+# IDE
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Debug
+*.log
+debug/
