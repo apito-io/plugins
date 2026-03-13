@@ -21,11 +21,11 @@ Examples: `hc-auth-plugin`, `hc-storage-plugin`, `hc-email-plugin`
 
 Your plugin repository must include:
 
-| File | Description |
-|------|-------------|
+| File         | Description                                                    |
+| ------------ | -------------------------------------------------------------- |
 | `config.yml` | Plugin configuration (id, type, GraphQL/REST config, env vars) |
-| `README.md` | Plugin documentation, installation, and API reference |
-| `logo.png` | Plugin icon (recommended: 256x256px) |
+| `README.md`  | Plugin documentation, installation, and API reference          |
+| `logo.png`   | Plugin icon (recommended: 256x256px)                           |
 
 See the [CDN Plugin Development Guide](./CDN-PLUGIN-DEVELOPMENT.md) for the full plugin structure and implementation details.
 
