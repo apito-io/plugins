@@ -1,5 +1,7 @@
 ---
-alwaysApply: true
+description: Knowledge entry point for apito-plugins — read .knowledge/README.md before coding in apito/plugins/apito-plugins
+globs: apito/plugins/apito-plugins/**
+alwaysApply: false
 ---
 
 # Knowledge base — apito-plugins
