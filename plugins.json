@@ -66,7 +66,7 @@
       "is_official": true,
       "name": "Cloudinary",
       "status": "available",
-      "version": "0.0.3"
+      "version": "0.0.4"
     },
     {
       "capabilities": [
