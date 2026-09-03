@@ -57,7 +57,8 @@
         "project.graphql",
         "project.rest",
         "console.routes",
-        "console.settings"
+        "console.settings",
+        "content.fields"
       ],
       "description": "Cloudinary media library beside Files.",
       "github_url": "https://github.com/apito-io/hc-cloudinary-plugin",
@@ -65,7 +66,7 @@
       "is_official": true,
       "name": "Cloudinary",
       "status": "available",
-      "version": "0.0.1"
+      "version": "0.0.3"
     },
     {
       "capabilities": [
