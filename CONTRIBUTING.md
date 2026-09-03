@@ -10,7 +10,8 @@ This repository is a **signed catalog**, not plugin source. Each plugin lives in
 4. Publish checksums (`*-checksums.txt`).
 5. Add `registry/<plugin-id>.json` in this repo. Point `releases[]` at immutable GitHub Release asset URLs (never `latest`). Include SHA-256 and byte size.
 6. Open a pull request. Automated checks validate schema, unique IDs, capability allowlist, and (when enabled) fetch+hash every asset.
-7. After merge, CI signs `dist/catalog.json` with Apito's Ed25519 key and publishes the `catalog-v1` release.
+7. Official version bumps: label the PR `official`. Auto-merge runs after Registry CI is green.
+8. After merge, CI signs `dist/catalog.json` with Apito's Ed25519 key and publishes the `catalog-v1` release.
 
 ## Reviewer
 

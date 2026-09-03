@@ -56,7 +56,8 @@
             "reviewed_by": { "type": "string" },
             "reviewed_at": { "type": "string" }
           }
-        }
+        },
+        "contributions": { "$ref": "#/$defs/contributions" }
       },
       "allOf": [
         {
@@ -102,6 +103,101 @@
       },
       "not": {
         "properties": { "url": { "pattern": "/latest" } }
+      }
+    },
+    "contributions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "api": {
+          "type": "object",
+          "properties": {
+            "scope": { "type": "string", "enum": ["system", "project"] },
+            "queries": { "type": "array", "items": { "$ref": "#/$defs/api_operation" } },
+            "mutations": { "type": "array", "items": { "$ref": "#/$defs/api_operation" } },
+            "rest": { "type": "array", "items": { "$ref": "#/$defs/rest_operation" } },
+            "events": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "ui": {
+          "type": "object",
+          "properties": {
+            "ui_available": { "type": "boolean" },
+            "routes": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "path": { "type": "string" },
+                  "title": { "type": "string" }
+                }
+              }
+            },
+            "navigation": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "after": { "type": "string" },
+                  "before": { "type": "string" },
+                  "group": { "type": "string" },
+                  "settings": { "type": "boolean" },
+                  "hidden": { "type": "boolean" },
+                  "label": { "type": "string" },
+                  "path": { "type": "string" },
+                  "icon": { "type": "string" }
+                }
+              }
+            },
+            "settings": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "path": { "type": "string" },
+                  "label": { "type": "string" }
+                }
+              }
+            },
+            "component_ids": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "label", "storage_type"],
+            "properties": {
+              "id": { "type": "string" },
+              "label": { "type": "string" },
+              "icon": { "type": "string" },
+              "storage_type": { "type": "string" },
+              "form_component": { "type": "string" },
+              "display_component": { "type": "string" },
+              "validation_schema": { "type": "string" },
+              "content_form": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    },
+    "api_operation": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "args": { "type": "string" },
+        "returns": { "type": "string" }
+      }
+    },
+    "rest_operation": {
+      "type": "object",
+      "required": ["method", "path"],
+      "properties": {
+        "method": { "type": "string" },
+        "path": { "type": "string" },
+        "description": { "type": "string" }
       }
     }
   }

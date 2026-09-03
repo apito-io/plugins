@@ -1,0 +1,24 @@
+name: Auto-merge official
+
+on:
+  pull_request:
+    types: [opened, labeled, synchronize, reopened]
+    paths:
+      - "registry/**"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  enable:
+    if: >
+      contains(github.event.pull_request.labels.*.name, 'official') &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enable auto-merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+        run: gh pr merge "$PR" --repo "${{ github.repository }}" --auto --squash --delete-branch
