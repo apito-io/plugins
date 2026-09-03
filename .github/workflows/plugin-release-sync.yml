@@ -1,0 +1,106 @@
+name: Plugin Release Sync
+
+on:
+  repository_dispatch:
+    types: [plugin-release]
+
+# Payload shape (sent by each plugin repo's build-release.yml):
+#   client_payload:
+#     plugin_id:  "hc-cloudinary-plugin"
+#     version:    "0.0.4"
+#     tag:        "v0.0.4"
+#     repository: "https://github.com/apito-io/hc-cloudinary-plugin"
+#     assets:     [{ os, arch, url, size, sha256 }, ...]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update registry JSON
+        env:
+          PLUGIN_ID: ${{ github.event.client_payload.plugin_id }}
+          VERSION: ${{ github.event.client_payload.version }}
+          TAG: ${{ github.event.client_payload.tag }}
+          ASSETS_JSON: ${{ toJSON(github.event.client_payload.assets) }}
+        run: |
+          python3 - << 'PYEOF'
+          import json, os, sys
+
+          plugin_id = os.environ["PLUGIN_ID"]
+          version = os.environ["VERSION"]
+          assets = json.loads(os.environ["ASSETS_JSON"])
+
+          reg_path = f"registry/{plugin_id}.json"
+          if not os.path.isfile(reg_path):
+              print(f"::error::Registry file {reg_path} not found — is this a new plugin?")
+              sys.exit(1)
+
+          with open(reg_path) as f:
+              reg = json.load(f)
+
+          old_version = reg.get("plugin_version", "?")
+          print(f"Updating {plugin_id}: {old_version} → {version}")
+
+          reg["plugin_version"] = version
+          if "runtime" in reg and isinstance(reg["runtime"], dict):
+              reg["runtime"]["version"] = version
+
+          # Rebuild releases array from dispatch payload
+          releases = []
+          for a in assets:
+              releases.append({
+                  "os": a["os"],
+                  "arch": a["arch"],
+                  "url": a["url"],
+                  "size": a["size"],
+                  "sha256": a["sha256"],
+              })
+          reg["releases"] = releases
+
+          with open(reg_path, "w") as f:
+              json.dump(reg, f, indent=2)
+              f.write("\n")
+
+          print(f"Updated {reg_path}")
+          PYEOF
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.22.x"
+
+      - name: Regenerate catalog
+        working-directory: tools/catalog
+        env:
+          PLUGIN_REGISTRY_SIGNING_KEY: ${{ secrets.PLUGIN_REGISTRY_SIGNING_KEY }}
+        run: |
+          go run . ../..
+
+      - name: Commit and push
+        env:
+          PLUGIN_ID: ${{ github.event.client_payload.plugin_id }}
+          VERSION: ${{ github.event.client_payload.version }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add registry/ dist/ plugins.json
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "chore(registry): auto-update ${PLUGIN_ID} to ${VERSION}"
+          git push
+
+      - name: Publish signed catalog release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: catalog-v1
+          name: Signed plugin catalog
+          body: |
+            Signed catalog auto-updated by plugin-release-sync.
+            Last update: ${{ github.event.client_payload.plugin_id }} ${{ github.event.client_payload.version }}
+          files: |
+            dist/catalog.json
+            dist/catalog.sig
+            dist/plugin-catalog.schema.json
+          make_latest: false
