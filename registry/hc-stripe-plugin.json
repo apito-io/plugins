@@ -1,0 +1,91 @@
+{
+  "id": "hc-stripe-plugin",
+  "name": "Stripe Billing",
+  "publisher": "Apito",
+  "repository": "https://github.com/apito-io/hc-stripe-plugin",
+  "license": "Apache-2.0",
+  "description": "Stripe Checkout and webhooks for your app.",
+  "long_description": "Create Checkout sessions and Customer Portal links, then receive paid or failed events on a per-project webhook URL. Not Apito SaaS billing.",
+  "icon": "",
+  "tags": [
+    "stripe",
+    "billing",
+    "checkout",
+    "payments"
+  ],
+  "category": "data",
+  "language": "go",
+  "capabilities": [
+    "project.graphql",
+    "project.rest",
+    "console.settings"
+  ],
+  "engine_semver": ">=2.4.0",
+  "plugin_version": "0.0.1",
+  "trust": "official",
+  "status": "available",
+  "documentation_url": "/docs/platform/plugins/",
+  "runtime": {
+    "id": "hc-stripe-plugin",
+    "version": "0.0.1",
+    "binary_path": "hc-stripe-plugin",
+    "capabilities": [
+      "project.graphql",
+      "project.rest",
+      "console.settings"
+    ],
+    "handshake": {
+      "protocol_version": 1,
+      "magic_cookie_key": "APITO_PLUGIN",
+      "magic_cookie_value": "apito_plugin_magic_cookie_v1"
+    }
+  },
+  "releases": [
+    {
+      "os": "darwin",
+      "arch": "amd64",
+      "url": "https://github.com/apito-io/hc-stripe-plugin/releases/download/v0.0.1/hc-stripe-plugin-v0.0.1-darwin-amd64.zip",
+      "size": 5273025,
+      "sha256": "3b53274718f7948023320f6e3d6297dcf93fdc6ace20b1a2ac553f641e38e9f4"
+    },
+    {
+      "os": "darwin",
+      "arch": "arm64",
+      "url": "https://github.com/apito-io/hc-stripe-plugin/releases/download/v0.0.1/hc-stripe-plugin-v0.0.1-darwin-arm64.zip",
+      "size": 4889216,
+      "sha256": "bfd820f60ed5ac827db7a99fcf452bf6c7a3fd2828abc8c35b30d6c11e709ae4"
+    },
+    {
+      "os": "linux",
+      "arch": "amd64",
+      "url": "https://github.com/apito-io/hc-stripe-plugin/releases/download/v0.0.1/hc-stripe-plugin-v0.0.1-linux-amd64.zip",
+      "size": 5157036,
+      "sha256": "e66b390965d19c947436bc8edbb4b1868de7b71cf7ce331115a44f6f55fc2399"
+    },
+    {
+      "os": "linux",
+      "arch": "arm64",
+      "url": "https://github.com/apito-io/hc-stripe-plugin/releases/download/v0.0.1/hc-stripe-plugin-v0.0.1-linux-arm64.zip",
+      "size": 4675374,
+      "sha256": "73dd06637705a058cb8dc8a6a04effe781cb1278a70165aa9cabacc71ebf3c29"
+    },
+    {
+      "os": "windows",
+      "arch": "amd64",
+      "url": "https://github.com/apito-io/hc-stripe-plugin/releases/download/v0.0.1/hc-stripe-plugin-v0.0.1-windows-amd64.zip",
+      "size": 5301032,
+      "sha256": "04c4f957f8744d48f0b1b2f962c4140a7cd25f98a8e1430911b2bdb2577fd57a"
+    },
+    {
+      "os": "windows",
+      "arch": "arm64",
+      "url": "https://github.com/apito-io/hc-stripe-plugin/releases/download/v0.0.1/hc-stripe-plugin-v0.0.1-windows-arm64.zip",
+      "size": 4745346,
+      "sha256": "41d1d69872f3c0c01c0440a7f61854105d94753fc5e8f5f3f6511d736f5cc76a"
+    }
+  ],
+  "approval": {
+    "reviewed_by": "apito",
+    "reviewed_at": "2026-09-03"
+  }
+}

@@ -1,22 +1,6 @@
-# Build artifacts
-*.so
-*.exe
-hc-*-plugin
-/hc-auth-plugin/
-/hc-storage-plugin/
-/hc-email-plugin/
-/hc-cache-plugin/
-/hc-realtime-plugin/
-/hc-rate-limit-plugin/
-/hc-search-plugin/
-/hc-webhook-plugin/
-/hc-push-notification-plugin/
-/hc-scheduler-plugin/
-/hc-logging-plugin/
-/hc-analytics-plugin/
-/hc-sms-plugin/
-/hc-payment-plugin/
-/hc-ai-plugin/
+# Plugin source lives in dedicated GitHub repos, never in this registry.
+/hc-*-plugin/
+/hc-*-plugin-1/
 
 # Go
 *.test
@@ -25,10 +9,17 @@ vendor/
 
 # Node / UI
 node_modules/
-dist/
+**/ui/dist/
 *.umd.js
 package-lock.json
 pnpm-lock.yaml
+
+# Signed catalog (generated; commit these)
+!dist/
+!dist/catalog.json
+!dist/catalog.sig
+!dist/plugin-catalog.schema.json
+
 
 # IDE
 .DS_Store

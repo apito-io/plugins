@@ -1,0 +1,92 @@
+{
+  "id": "hc-cloudinary-plugin",
+  "name": "Cloudinary",
+  "publisher": "Apito",
+  "repository": "https://github.com/apito-io/hc-cloudinary-plugin",
+  "license": "Apache-2.0",
+  "description": "Cloudinary media library beside Files.",
+  "long_description": "Signed uploads, asset list, and delete via Cloudinary. Console library page appears after activation. Does not replace S3 Files.",
+  "icon": "",
+  "tags": [
+    "cloudinary",
+    "media",
+    "images"
+  ],
+  "category": "storage",
+  "language": "go",
+  "capabilities": [
+    "project.graphql",
+    "project.rest",
+    "console.routes",
+    "console.settings"
+  ],
+  "engine_semver": ">=2.4.0",
+  "plugin_version": "0.0.1",
+  "trust": "official",
+  "status": "available",
+  "documentation_url": "/docs/platform/plugins/",
+  "runtime": {
+    "id": "hc-cloudinary-plugin",
+    "version": "0.0.1",
+    "binary_path": "hc-cloudinary-plugin",
+    "capabilities": [
+      "project.graphql",
+      "project.rest",
+      "console.routes",
+      "console.settings"
+    ],
+    "handshake": {
+      "protocol_version": 1,
+      "magic_cookie_key": "APITO_PLUGIN",
+      "magic_cookie_value": "apito_plugin_magic_cookie_v1"
+    }
+  },
+  "releases": [
+    {
+      "os": "darwin",
+      "arch": "amd64",
+      "url": "https://github.com/apito-io/hc-cloudinary-plugin/releases/download/v0.0.1/hc-cloudinary-plugin-v0.0.1-darwin-amd64.zip",
+      "size": 5272397,
+      "sha256": "cfc7147487c5f3ddac10a4f7f2318c96b1dccaadd27d8aff2ddfc4d472f10659"
+    },
+    {
+      "os": "darwin",
+      "arch": "arm64",
+      "url": "https://github.com/apito-io/hc-cloudinary-plugin/releases/download/v0.0.1/hc-cloudinary-plugin-v0.0.1-darwin-arm64.zip",
+      "size": 4888988,
+      "sha256": "f4c60a7ab12b54a08e06bcd70aed57752282f437846c680eb4bbaa3f65a38171"
+    },
+    {
+      "os": "linux",
+      "arch": "amd64",
+      "url": "https://github.com/apito-io/hc-cloudinary-plugin/releases/download/v0.0.1/hc-cloudinary-plugin-v0.0.1-linux-amd64.zip",
+      "size": 5157760,
+      "sha256": "4a09a90e8f83fcc02ca56e0de94793275a56dd1a3a7652fc05dcd8881af9d6fd"
+    },
+    {
+      "os": "linux",
+      "arch": "arm64",
+      "url": "https://github.com/apito-io/hc-cloudinary-plugin/releases/download/v0.0.1/hc-cloudinary-plugin-v0.0.1-linux-arm64.zip",
+      "size": 4675368,
+      "sha256": "988dc8d130a02d79ab5201a2da12468666ef1f6025f67340a60e0dd6438f5e65"
+    },
+    {
+      "os": "windows",
+      "arch": "amd64",
+      "url": "https://github.com/apito-io/hc-cloudinary-plugin/releases/download/v0.0.1/hc-cloudinary-plugin-v0.0.1-windows-amd64.zip",
+      "size": 5302860,
+      "sha256": "b0fb2b64cb5b7b31db2b1537b20a2e3a0ea52de8a8c6ae68d091edbf4a185846"
+    },
+    {
+      "os": "windows",
+      "arch": "arm64",
+      "url": "https://github.com/apito-io/hc-cloudinary-plugin/releases/download/v0.0.1/hc-cloudinary-plugin-v0.0.1-windows-arm64.zip",
+      "size": 4744778,
+      "sha256": "e014950d39c1f3ba0124c00552e939dc43a063d506445c482a643328ca597cda"
+    }
+  ],
+  "approval": {
+    "reviewed_by": "apito",
+    "reviewed_at": "2026-09-03"
+  }
+}

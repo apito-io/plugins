@@ -1,10 +1,13 @@
 # apito-plugins — Current
 
 ## Working on
-- _TODO (from in-progress plans)_
+Signed public registry. Source for discord/stripe/cloudinary still in this
+repo until GitHub `apito-io/hc-*-plugin` repos exist.
 
 ## Next
-- _TODO (from pending plans)_
+Confirm: create public plugin repos, tag v1.0.0, set
+`PLUGIN_REGISTRY_SIGNING_KEY`, publish `catalog-v1`. Then delete duplicated
+source folders.
 
 ## Last Updated
-2026-07-06
+2026-09-03

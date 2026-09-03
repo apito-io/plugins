@@ -1,0 +1,94 @@
+name: Registry
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.22.x"
+      - name: Generate catalog
+        working-directory: tools/catalog
+        run: go run . ../..
+      - name: Unique IDs and status rules
+        run: |
+          python3 - << 'PY'
+          import json, pathlib, sys
+          cat = json.loads(pathlib.Path("dist/catalog.json").read_text())
+          ids=set()
+          for p in cat["plugins"]:
+              i=p["id"]
+              if i in ids:
+                  sys.exit(f"duplicate {i}")
+              ids.add(i)
+              if "/latest" in (p.get("repository") or "").lower():
+                  sys.exit(f"{i} mutable latest URL")
+              if p.get("status")=="catalog-stub" and p.get("releases"):
+                  sys.exit(f"{i} stub must not have releases")
+              for r in p.get("releases") or []:
+                  u=r.get("url") or ""
+                  if "/latest" in u or not u.startswith("https://github.com/"):
+                      sys.exit(f"{i} bad release URL {u}")
+          print("ok", len(ids), "plugins")
+          PY
+      - name: Fetch release assets
+        if: ${{ vars.REGISTRY_FETCH_ASSETS == '1' }}
+        run: |
+          python3 - << 'PY'
+          import json, hashlib, pathlib, ssl, sys, urllib.request
+          cat = json.loads(pathlib.Path("dist/catalog.json").read_text())
+          ctx = ssl.create_default_context()
+          for p in cat["plugins"]:
+              if p.get("status") != "available":
+                  continue
+              for r in p.get("releases") or []:
+                  u, sha, size = r["url"], r["sha256"], r["size"]
+                  print("fetch", u)
+                  with urllib.request.urlopen(u, context=ctx, timeout=60) as resp:
+                      data = resp.read()
+                  if size and len(data) != size:
+                      sys.exit(f"size {len(data)} != {size} for {u}")
+                  got = hashlib.sha256(data).hexdigest()
+                  if got.lower() != sha.lower():
+                      sys.exit(f"sha mismatch {u}")
+          print("assets ok")
+          PY
+
+  sign:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.22.x"
+      - name: Sign catalog
+        working-directory: tools/catalog
+        env:
+          PLUGIN_REGISTRY_SIGNING_KEY: ${{ secrets.PLUGIN_REGISTRY_SIGNING_KEY }}
+        run: |
+          if [ -z "$PLUGIN_REGISTRY_SIGNING_KEY" ]; then
+            echo "No PLUGIN_REGISTRY_SIGNING_KEY; keep committed dist/"
+            exit 0
+          fi
+          go run . ../..
+      - name: Publish catalog-v1 release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: catalog-v1
+          name: Signed plugin catalog
+          body: Immutable signed catalog for Engine, Console, and apito.io/plugins.
+          files: |
+            dist/catalog.json
+            dist/catalog.sig
+            dist/plugin-catalog.schema.json
+          make_latest: false

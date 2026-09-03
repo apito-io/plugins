@@ -1,20 +1,20 @@
 # apito-plugins — Knowledge
 
-Part of the **apito** ecosystem. See `/.knowledge/projects/apito.md` for how this repo fits and its blast radius.
+Part of the **apito** ecosystem. See `/.knowledge/projects/apito.md`.
 
 ## Read order
-1. This file. 2. `ARCHITECTURE.md`. 3. `DECISIONS.md`. 4. `../.memory/CURRENT.md` and `../.memory/HANDOFF.md`.
+1. This file. 2. `ARCHITECTURE.md`. 3. `DECISIONS.md`. 4. `CONTRIBUTING.md`.
 
 ## Purpose
-- _TODO: one-paragraph description of what this repo does._
+Signed public registry for reviewed HashiCorp plugins. Plugin source lives in one public repo per plugin. This repo publishes `dist/catalog.json` + `dist/catalog.sig`.
 
 ## Responsibilities
-- _TODO_
+- Per-plugin `registry/<id>.json` review
+- Schema + CI validation
+- Ed25519-signed catalog release `catalog-v1`
 
 ## Consumers / blast radius
-- _TODO: who breaks if this repo changes._
+Engine installer, Console marketplace, apito.io/plugins, CLI `apito plugin add`.
 
-## Reasoning archive
-- Historical Cursor plans distilled into this knowledge base live in `archive/plans/`.
+Last Updated: 2026-09-03
 
-Last Updated: 2026-07-06

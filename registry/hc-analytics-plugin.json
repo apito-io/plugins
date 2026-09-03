@@ -1,0 +1,42 @@
+{
+  "id": "hc-analytics-plugin",
+  "name": "Analytics & Metrics",
+  "publisher": "Apito Team",
+  "repository": "https://github.com/apito-io/hc-analytics-plugin",
+  "license": "Apache-2.0",
+  "description": "Google Analytics, custom events, and metrics",
+  "long_description": "Analytics integration with Google Analytics 4, custom event tracking, user behavior analysis, conversion tracking, and real-time reports.",
+  "icon": "https://raw.githubusercontent.com/apito-io/hc-analytics-plugin/main/logo.png",
+  "tags": [
+    "analytics",
+    "tracking",
+    "events",
+    "metrics"
+  ],
+  "category": "analytics",
+  "language": "go",
+  "capabilities": [
+    "project.graphql",
+    "project.rest"
+  ],
+  "engine_semver": ">=2.4.0",
+  "plugin_version": "1.0.0",
+  "trust": "official",
+  "status": "catalog-stub",
+  "documentation_url": "/docs/platform/plugins/",
+  "runtime": {
+    "id": "hc-analytics-plugin",
+    "version": "1.0.0",
+    "binary_path": "hc-analytics-plugin",
+    "capabilities": [
+      "project.graphql",
+      "project.rest"
+    ],
+    "handshake": {
+      "protocol_version": 1,
+      "magic_cookie_key": "APITO_PLUGIN",
+      "magic_cookie_value": "apito_plugin_magic_cookie_v1"
+    }
+  },
+  "releases": []
+}

@@ -1,0 +1,92 @@
+{
+  "id": "hc-discord-plugin",
+  "name": "Discord Notifications",
+  "publisher": "Apito",
+  "repository": "https://github.com/apito-io/hc-discord-plugin",
+  "license": "Apache-2.0",
+  "description": "Send order, signup, error, or publish events to Discord.",
+  "long_description": "Activate per project, paste a Discord webhook URL, and filter events (order, signup, error, publish). Secrets live in plugin env_vars.",
+  "icon": "",
+  "tags": [
+    "discord",
+    "notifications",
+    "webhooks"
+  ],
+  "category": "communication",
+  "language": "go",
+  "capabilities": [
+    "project.graphql",
+    "project.rest",
+    "console.settings",
+    "system.events"
+  ],
+  "engine_semver": ">=2.4.0",
+  "plugin_version": "0.0.1",
+  "trust": "official",
+  "status": "available",
+  "documentation_url": "/docs/platform/plugins/",
+  "runtime": {
+    "id": "hc-discord-plugin",
+    "version": "0.0.1",
+    "binary_path": "hc-discord-plugin",
+    "capabilities": [
+      "project.graphql",
+      "project.rest",
+      "console.settings",
+      "system.events"
+    ],
+    "handshake": {
+      "protocol_version": 1,
+      "magic_cookie_key": "APITO_PLUGIN",
+      "magic_cookie_value": "apito_plugin_magic_cookie_v1"
+    }
+  },
+  "releases": [
+    {
+      "os": "darwin",
+      "arch": "amd64",
+      "url": "https://github.com/apito-io/hc-discord-plugin/releases/download/v0.0.1/hc-discord-plugin-v0.0.1-darwin-amd64.zip",
+      "size": 5268873,
+      "sha256": "06f91ed7eba4a25010ee5c82055f0be2d6d09e2d9a80aa2930afea5fa80ef4cf"
+    },
+    {
+      "os": "darwin",
+      "arch": "arm64",
+      "url": "https://github.com/apito-io/hc-discord-plugin/releases/download/v0.0.1/hc-discord-plugin-v0.0.1-darwin-arm64.zip",
+      "size": 4885734,
+      "sha256": "367b67590232a9a2703dfdff344642e16ce53c08ffb1676d3a6fe09442113a9c"
+    },
+    {
+      "os": "linux",
+      "arch": "amd64",
+      "url": "https://github.com/apito-io/hc-discord-plugin/releases/download/v0.0.1/hc-discord-plugin-v0.0.1-linux-amd64.zip",
+      "size": 5152672,
+      "sha256": "1fd7b825fa62b59dddaeb58c99f875c6ed3e8f37c4b56d7364fc5c16520545d4"
+    },
+    {
+      "os": "linux",
+      "arch": "arm64",
+      "url": "https://github.com/apito-io/hc-discord-plugin/releases/download/v0.0.1/hc-discord-plugin-v0.0.1-linux-arm64.zip",
+      "size": 4674408,
+      "sha256": "261225263429c786b9decbb87370412f5ae213413b3474d80ffe60a8703f9410"
+    },
+    {
+      "os": "windows",
+      "arch": "amd64",
+      "url": "https://github.com/apito-io/hc-discord-plugin/releases/download/v0.0.1/hc-discord-plugin-v0.0.1-windows-amd64.zip",
+      "size": 5296981,
+      "sha256": "de9e5e9cef12c282640de912f9fe3b96cef1a34f2f0f3e3eb9050a246be1ff4d"
+    },
+    {
+      "os": "windows",
+      "arch": "arm64",
+      "url": "https://github.com/apito-io/hc-discord-plugin/releases/download/v0.0.1/hc-discord-plugin-v0.0.1-windows-arm64.zip",
+      "size": 4741983,
+      "sha256": "2b11302ab740de6a5800256bb845410b8166709a6a6578ea7eb8f6c4ff372fc4"
+    }
+  ],
+  "approval": {
+    "reviewed_by": "apito",
+    "reviewed_at": "2026-09-03"
+  }
+}

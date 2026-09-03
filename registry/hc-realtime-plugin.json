@@ -1,0 +1,42 @@
+{
+  "id": "hc-realtime-plugin",
+  "name": "Realtime Sync",
+  "publisher": "Apito Team",
+  "repository": "https://github.com/apito-io/hc-realtime-plugin",
+  "license": "Apache-2.0",
+  "description": "Real-time data synchronization via WebSocket",
+  "long_description": "Real-time data synchronization with WebSocket connections. Supports conflict resolution, offline support, and change tracking.",
+  "icon": "https://raw.githubusercontent.com/apito-io/hc-realtime-plugin/main/logo.png",
+  "tags": [
+    "realtime",
+    "websocket",
+    "sync",
+    "database"
+  ],
+  "category": "data",
+  "language": "go",
+  "capabilities": [
+    "system.graphql",
+    "system.rest"
+  ],
+  "engine_semver": ">=2.4.0",
+  "plugin_version": "1.0.0",
+  "trust": "official",
+  "status": "catalog-stub",
+  "documentation_url": "/docs/platform/plugins/",
+  "runtime": {
+    "id": "hc-realtime-plugin",
+    "version": "1.0.0",
+    "binary_path": "hc-realtime-plugin",
+    "capabilities": [
+      "system.graphql",
+      "system.rest"
+    ],
+    "handshake": {
+      "protocol_version": 1,
+      "magic_cookie_key": "APITO_PLUGIN",
+      "magic_cookie_value": "apito_plugin_magic_cookie_v1"
+    }
+  },
+  "releases": []
+}

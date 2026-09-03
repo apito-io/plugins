@@ -1,0 +1,42 @@
+{
+  "id": "hc-storage-plugin",
+  "name": "File Storage",
+  "publisher": "Apito Team",
+  "repository": "https://github.com/apito-io/hc-storage-plugin",
+  "license": "Apache-2.0",
+  "description": "AWS S3, Google Cloud Storage, and local file storage",
+  "long_description": "Unified file storage abstraction supporting AWS S3, Google Cloud Storage, Cloudflare R2, and local storage. Includes image optimization and file upload validation.",
+  "icon": "https://raw.githubusercontent.com/apito-io/hc-storage-plugin/main/logo.png",
+  "tags": [
+    "storage",
+    "aws",
+    "gcp",
+    "s3"
+  ],
+  "category": "storage",
+  "language": "go",
+  "capabilities": [
+    "system.graphql",
+    "system.rest"
+  ],
+  "engine_semver": ">=2.4.0",
+  "plugin_version": "1.0.0",
+  "trust": "official",
+  "status": "catalog-stub",
+  "documentation_url": "/docs/platform/plugins/",
+  "runtime": {
+    "id": "hc-storage-plugin",
+    "version": "1.0.0",
+    "binary_path": "hc-storage-plugin",
+    "capabilities": [
+      "system.graphql",
+      "system.rest"
+    ],
+    "handshake": {
+      "protocol_version": 1,
+      "magic_cookie_key": "APITO_PLUGIN",
+      "magic_cookie_value": "apito_plugin_magic_cookie_v1"
+    }
+  },
+  "releases": []
+}

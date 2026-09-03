@@ -1,0 +1,42 @@
+{
+  "id": "hc-push-notification-plugin",
+  "name": "Push Notifications",
+  "publisher": "Apito Team",
+  "repository": "https://github.com/apito-io/hc-push-notification-plugin",
+  "license": "Apache-2.0",
+  "description": "FCM and APNs push notification support",
+  "long_description": "Push notification delivery for Firebase Cloud Messaging (FCM) and Apple Push Notification service (APNs). Supports topic-based and device-targeted notifications.",
+  "icon": "https://raw.githubusercontent.com/apito-io/hc-push-notification-plugin/main/logo.png",
+  "tags": [
+    "push",
+    "fcm",
+    "apns",
+    "notifications"
+  ],
+  "category": "communication",
+  "language": "go",
+  "capabilities": [
+    "system.graphql",
+    "system.rest"
+  ],
+  "engine_semver": ">=2.4.0",
+  "plugin_version": "1.0.0",
+  "trust": "official",
+  "status": "catalog-stub",
+  "documentation_url": "/docs/platform/plugins/",
+  "runtime": {
+    "id": "hc-push-notification-plugin",
+    "version": "1.0.0",
+    "binary_path": "hc-push-notification-plugin",
+    "capabilities": [
+      "system.graphql",
+      "system.rest"
+    ],
+    "handshake": {
+      "protocol_version": 1,
+      "magic_cookie_key": "APITO_PLUGIN",
+      "magic_cookie_value": "apito_plugin_magic_cookie_v1"
+    }
+  },
+  "releases": []
+}

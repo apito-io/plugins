@@ -1,0 +1,42 @@
+{
+  "id": "hc-sms-plugin",
+  "name": "SMS Service",
+  "publisher": "Apito Team",
+  "repository": "https://github.com/apito-io/hc-sms-plugin",
+  "license": "Apache-2.0",
+  "description": "Twilio and Vonage SMS integration",
+  "long_description": "SMS delivery service with Twilio and Vonage support. Includes templating, delivery status tracking, and multi-region support.",
+  "icon": "https://raw.githubusercontent.com/apito-io/hc-sms-plugin/main/logo.png",
+  "tags": [
+    "sms",
+    "twilio",
+    "vonage",
+    "messaging"
+  ],
+  "category": "communication",
+  "language": "go",
+  "capabilities": [
+    "system.graphql",
+    "system.rest"
+  ],
+  "engine_semver": ">=2.4.0",
+  "plugin_version": "1.0.0",
+  "trust": "official",
+  "status": "catalog-stub",
+  "documentation_url": "/docs/platform/plugins/",
+  "runtime": {
+    "id": "hc-sms-plugin",
+    "version": "1.0.0",
+    "binary_path": "hc-sms-plugin",
+    "capabilities": [
+      "system.graphql",
+      "system.rest"
+    ],
+    "handshake": {
+      "protocol_version": 1,
+      "magic_cookie_key": "APITO_PLUGIN",
+      "magic_cookie_value": "apito_plugin_magic_cookie_v1"
+    }
+  },
+  "releases": []
+}

@@ -1,0 +1,42 @@
+{
+  "id": "hc-search-plugin",
+  "name": "Full-text Search",
+  "publisher": "Apito Team",
+  "repository": "https://github.com/apito-io/hc-search-plugin",
+  "license": "Apache-2.0",
+  "description": "Elasticsearch and Meilisearch integration",
+  "long_description": "Full-text search capabilities with Elasticsearch and Meilisearch. Supports indexing, faceted search, and search analytics.",
+  "icon": "https://raw.githubusercontent.com/apito-io/hc-search-plugin/main/logo.png",
+  "tags": [
+    "search",
+    "elasticsearch",
+    "meilisearch",
+    "full-text"
+  ],
+  "category": "data",
+  "language": "go",
+  "capabilities": [
+    "system.graphql",
+    "system.rest"
+  ],
+  "engine_semver": ">=2.4.0",
+  "plugin_version": "1.0.0",
+  "trust": "official",
+  "status": "catalog-stub",
+  "documentation_url": "/docs/platform/plugins/",
+  "runtime": {
+    "id": "hc-search-plugin",
+    "version": "1.0.0",
+    "binary_path": "hc-search-plugin",
+    "capabilities": [
+      "system.graphql",
+      "system.rest"
+    ],
+    "handshake": {
+      "protocol_version": 1,
+      "magic_cookie_key": "APITO_PLUGIN",
+      "magic_cookie_value": "apito_plugin_magic_cookie_v1"
+    }
+  },
+  "releases": []
+}

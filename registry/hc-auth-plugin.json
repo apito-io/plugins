@@ -1,0 +1,42 @@
+{
+  "id": "hc-auth-plugin",
+  "name": "Authentication",
+  "publisher": "Apito Team",
+  "repository": "https://github.com/apito-io/hc-auth-plugin",
+  "license": "Apache-2.0",
+  "description": "JWT, OAuth, and SAML authentication for your API",
+  "long_description": "Complete authentication solution supporting JWT tokens, OAuth 2.0, and SAML SSO. Includes role-based access control and multi-factor authentication.",
+  "icon": "https://raw.githubusercontent.com/apito-io/hc-auth-plugin/main/logo.png",
+  "tags": [
+    "jwt",
+    "oauth",
+    "saml",
+    "security"
+  ],
+  "category": "authentication",
+  "language": "go",
+  "capabilities": [
+    "system.graphql",
+    "system.rest"
+  ],
+  "engine_semver": ">=2.4.0",
+  "plugin_version": "1.0.0",
+  "trust": "official",
+  "status": "catalog-stub",
+  "documentation_url": "/docs/platform/plugins/",
+  "runtime": {
+    "id": "hc-auth-plugin",
+    "version": "1.0.0",
+    "binary_path": "hc-auth-plugin",
+    "capabilities": [
+      "system.graphql",
+      "system.rest"
+    ],
+    "handshake": {
+      "protocol_version": 1,
+      "magic_cookie_key": "APITO_PLUGIN",
+      "magic_cookie_value": "apito_plugin_magic_cookie_v1"
+    }
+  },
+  "releases": []
+}

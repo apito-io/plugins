@@ -1,0 +1,911 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-03T07:48:47Z",
+  "plugins": [
+    {
+      "capabilities": [
+        "project.graphql",
+        "project.rest"
+      ],
+      "category": "data",
+      "description": "OpenAI and AI model integration",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "https://raw.githubusercontent.com/apito-io/hc-ai-plugin/main/logo.png",
+      "id": "hc-ai-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "AI and machine learning integration with OpenAI, custom model support, embeddings, and function calling for your API.",
+      "name": "AI/ML Functions",
+      "plugin_version": "1.0.0",
+      "publisher": "Apito Team",
+      "releases": [],
+      "repository": "https://github.com/apito-io/hc-ai-plugin",
+      "runtime": {
+        "binary_path": "hc-ai-plugin",
+        "capabilities": [
+          "project.graphql",
+          "project.rest"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-ai-plugin",
+        "version": "1.0.0"
+      },
+      "status": "catalog-stub",
+      "tags": [
+        "ai",
+        "openai",
+        "ml",
+        "embeddings"
+      ],
+      "trust": "official"
+    },
+    {
+      "capabilities": [
+        "project.graphql",
+        "project.rest"
+      ],
+      "category": "analytics",
+      "description": "Google Analytics, custom events, and metrics",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "https://raw.githubusercontent.com/apito-io/hc-analytics-plugin/main/logo.png",
+      "id": "hc-analytics-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "Analytics integration with Google Analytics 4, custom event tracking, user behavior analysis, conversion tracking, and real-time reports.",
+      "name": "Analytics \u0026 Metrics",
+      "plugin_version": "1.0.0",
+      "publisher": "Apito Team",
+      "releases": [],
+      "repository": "https://github.com/apito-io/hc-analytics-plugin",
+      "runtime": {
+        "binary_path": "hc-analytics-plugin",
+        "capabilities": [
+          "project.graphql",
+          "project.rest"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-analytics-plugin",
+        "version": "1.0.0"
+      },
+      "status": "catalog-stub",
+      "tags": [
+        "analytics",
+        "tracking",
+        "events",
+        "metrics"
+      ],
+      "trust": "official"
+    },
+    {
+      "capabilities": [
+        "system.graphql",
+        "system.rest"
+      ],
+      "category": "authentication",
+      "description": "JWT, OAuth, and SAML authentication for your API",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "https://raw.githubusercontent.com/apito-io/hc-auth-plugin/main/logo.png",
+      "id": "hc-auth-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "Complete authentication solution supporting JWT tokens, OAuth 2.0, and SAML SSO. Includes role-based access control and multi-factor authentication.",
+      "name": "Authentication",
+      "plugin_version": "1.0.0",
+      "publisher": "Apito Team",
+      "releases": [],
+      "repository": "https://github.com/apito-io/hc-auth-plugin",
+      "runtime": {
+        "binary_path": "hc-auth-plugin",
+        "capabilities": [
+          "system.graphql",
+          "system.rest"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-auth-plugin",
+        "version": "1.0.0"
+      },
+      "status": "catalog-stub",
+      "tags": [
+        "jwt",
+        "oauth",
+        "saml",
+        "security"
+      ],
+      "trust": "official"
+    },
+    {
+      "capabilities": [
+        "system.graphql",
+        "system.rest"
+      ],
+      "category": "performance",
+      "description": "Redis and Memcached integration",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "https://raw.githubusercontent.com/apito-io/hc-cache-plugin/main/logo.png",
+      "id": "hc-cache-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "High-performance caching with Redis and Memcached support. In-memory caching, cache invalidation, and performance metrics included.",
+      "name": "Caching",
+      "plugin_version": "1.0.0",
+      "publisher": "Apito Team",
+      "releases": [],
+      "repository": "https://github.com/apito-io/hc-cache-plugin",
+      "runtime": {
+        "binary_path": "hc-cache-plugin",
+        "capabilities": [
+          "system.graphql",
+          "system.rest"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-cache-plugin",
+        "version": "1.0.0"
+      },
+      "status": "catalog-stub",
+      "tags": [
+        "cache",
+        "redis",
+        "memcached",
+        "performance"
+      ],
+      "trust": "official"
+    },
+    {
+      "approval": {
+        "reviewed_at": "2026-09-03",
+        "reviewed_by": "apito"
+      },
+      "capabilities": [
+        "project.graphql",
+        "project.rest",
+        "console.routes",
+        "console.settings"
+      ],
+      "category": "storage",
+      "description": "Cloudinary media library beside Files.",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "",
+      "id": "hc-cloudinary-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "Signed uploads, asset list, and delete via Cloudinary. Console library page appears after activation. Does not replace S3 Files.",
+      "name": "Cloudinary",
+      "plugin_version": "0.0.1",
+      "publisher": "Apito",
+      "releases": [
+        {
+          "arch": "amd64",
+          "os": "darwin",
+          "sha256": "cfc7147487c5f3ddac10a4f7f2318c96b1dccaadd27d8aff2ddfc4d472f10659",
+          "size": 5272397,
+          "url": "https://github.com/apito-io/hc-cloudinary-plugin/releases/download/v0.0.1/hc-cloudinary-plugin-v0.0.1-darwin-amd64.zip"
+        },
+        {
+          "arch": "arm64",
+          "os": "darwin",
+          "sha256": "f4c60a7ab12b54a08e06bcd70aed57752282f437846c680eb4bbaa3f65a38171",
+          "size": 4888988,
+          "url": "https://github.com/apito-io/hc-cloudinary-plugin/releases/download/v0.0.1/hc-cloudinary-plugin-v0.0.1-darwin-arm64.zip"
+        },
+        {
+          "arch": "amd64",
+          "os": "linux",
+          "sha256": "4a09a90e8f83fcc02ca56e0de94793275a56dd1a3a7652fc05dcd8881af9d6fd",
+          "size": 5157760,
+          "url": "https://github.com/apito-io/hc-cloudinary-plugin/releases/download/v0.0.1/hc-cloudinary-plugin-v0.0.1-linux-amd64.zip"
+        },
+        {
+          "arch": "arm64",
+          "os": "linux",
+          "sha256": "988dc8d130a02d79ab5201a2da12468666ef1f6025f67340a60e0dd6438f5e65",
+          "size": 4675368,
+          "url": "https://github.com/apito-io/hc-cloudinary-plugin/releases/download/v0.0.1/hc-cloudinary-plugin-v0.0.1-linux-arm64.zip"
+        },
+        {
+          "arch": "amd64",
+          "os": "windows",
+          "sha256": "b0fb2b64cb5b7b31db2b1537b20a2e3a0ea52de8a8c6ae68d091edbf4a185846",
+          "size": 5302860,
+          "url": "https://github.com/apito-io/hc-cloudinary-plugin/releases/download/v0.0.1/hc-cloudinary-plugin-v0.0.1-windows-amd64.zip"
+        },
+        {
+          "arch": "arm64",
+          "os": "windows",
+          "sha256": "e014950d39c1f3ba0124c00552e939dc43a063d506445c482a643328ca597cda",
+          "size": 4744778,
+          "url": "https://github.com/apito-io/hc-cloudinary-plugin/releases/download/v0.0.1/hc-cloudinary-plugin-v0.0.1-windows-arm64.zip"
+        }
+      ],
+      "repository": "https://github.com/apito-io/hc-cloudinary-plugin",
+      "runtime": {
+        "binary_path": "hc-cloudinary-plugin",
+        "capabilities": [
+          "project.graphql",
+          "project.rest",
+          "console.routes",
+          "console.settings"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-cloudinary-plugin",
+        "version": "0.0.1"
+      },
+      "status": "available",
+      "tags": [
+        "cloudinary",
+        "media",
+        "images"
+      ],
+      "trust": "official"
+    },
+    {
+      "approval": {
+        "reviewed_at": "2026-09-03",
+        "reviewed_by": "apito"
+      },
+      "capabilities": [
+        "project.graphql",
+        "project.rest",
+        "console.settings",
+        "system.events"
+      ],
+      "category": "communication",
+      "description": "Send order, signup, error, or publish events to Discord.",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "",
+      "id": "hc-discord-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "Activate per project, paste a Discord webhook URL, and filter events (order, signup, error, publish). Secrets live in plugin env_vars.",
+      "name": "Discord Notifications",
+      "plugin_version": "0.0.1",
+      "publisher": "Apito",
+      "releases": [
+        {
+          "arch": "amd64",
+          "os": "darwin",
+          "sha256": "06f91ed7eba4a25010ee5c82055f0be2d6d09e2d9a80aa2930afea5fa80ef4cf",
+          "size": 5268873,
+          "url": "https://github.com/apito-io/hc-discord-plugin/releases/download/v0.0.1/hc-discord-plugin-v0.0.1-darwin-amd64.zip"
+        },
+        {
+          "arch": "arm64",
+          "os": "darwin",
+          "sha256": "367b67590232a9a2703dfdff344642e16ce53c08ffb1676d3a6fe09442113a9c",
+          "size": 4885734,
+          "url": "https://github.com/apito-io/hc-discord-plugin/releases/download/v0.0.1/hc-discord-plugin-v0.0.1-darwin-arm64.zip"
+        },
+        {
+          "arch": "amd64",
+          "os": "linux",
+          "sha256": "1fd7b825fa62b59dddaeb58c99f875c6ed3e8f37c4b56d7364fc5c16520545d4",
+          "size": 5152672,
+          "url": "https://github.com/apito-io/hc-discord-plugin/releases/download/v0.0.1/hc-discord-plugin-v0.0.1-linux-amd64.zip"
+        },
+        {
+          "arch": "arm64",
+          "os": "linux",
+          "sha256": "261225263429c786b9decbb87370412f5ae213413b3474d80ffe60a8703f9410",
+          "size": 4674408,
+          "url": "https://github.com/apito-io/hc-discord-plugin/releases/download/v0.0.1/hc-discord-plugin-v0.0.1-linux-arm64.zip"
+        },
+        {
+          "arch": "amd64",
+          "os": "windows",
+          "sha256": "de9e5e9cef12c282640de912f9fe3b96cef1a34f2f0f3e3eb9050a246be1ff4d",
+          "size": 5296981,
+          "url": "https://github.com/apito-io/hc-discord-plugin/releases/download/v0.0.1/hc-discord-plugin-v0.0.1-windows-amd64.zip"
+        },
+        {
+          "arch": "arm64",
+          "os": "windows",
+          "sha256": "2b11302ab740de6a5800256bb845410b8166709a6a6578ea7eb8f6c4ff372fc4",
+          "size": 4741983,
+          "url": "https://github.com/apito-io/hc-discord-plugin/releases/download/v0.0.1/hc-discord-plugin-v0.0.1-windows-arm64.zip"
+        }
+      ],
+      "repository": "https://github.com/apito-io/hc-discord-plugin",
+      "runtime": {
+        "binary_path": "hc-discord-plugin",
+        "capabilities": [
+          "project.graphql",
+          "project.rest",
+          "console.settings",
+          "system.events"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-discord-plugin",
+        "version": "0.0.1"
+      },
+      "status": "available",
+      "tags": [
+        "discord",
+        "notifications",
+        "webhooks"
+      ],
+      "trust": "official"
+    },
+    {
+      "capabilities": [
+        "system.graphql",
+        "system.rest"
+      ],
+      "category": "communication",
+      "description": "SendGrid, Mailgun, and SMTP support",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "https://raw.githubusercontent.com/apito-io/hc-email-plugin/main/logo.png",
+      "id": "hc-email-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "Email delivery service with support for SendGrid, Mailgun, and custom SMTP servers. Includes template management and email analytics.",
+      "name": "Email Service",
+      "plugin_version": "1.0.0",
+      "publisher": "Apito Team",
+      "releases": [],
+      "repository": "https://github.com/apito-io/hc-email-plugin",
+      "runtime": {
+        "binary_path": "hc-email-plugin",
+        "capabilities": [
+          "system.graphql",
+          "system.rest"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-email-plugin",
+        "version": "1.0.0"
+      },
+      "status": "catalog-stub",
+      "tags": [
+        "email",
+        "sendgrid",
+        "mailgun",
+        "smtp"
+      ],
+      "trust": "official"
+    },
+    {
+      "capabilities": [
+        "system.graphql",
+        "system.rest"
+      ],
+      "category": "monitoring",
+      "description": "Structured logging and application monitoring",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "https://raw.githubusercontent.com/apito-io/hc-logging-plugin/main/logo.png",
+      "id": "hc-logging-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "Structured logging with log aggregation, application monitoring, health checks, and alerting integration.",
+      "name": "Logging \u0026 Monitoring",
+      "plugin_version": "1.0.0",
+      "publisher": "Apito Team",
+      "releases": [],
+      "repository": "https://github.com/apito-io/hc-logging-plugin",
+      "runtime": {
+        "binary_path": "hc-logging-plugin",
+        "capabilities": [
+          "system.graphql",
+          "system.rest"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-logging-plugin",
+        "version": "1.0.0"
+      },
+      "status": "catalog-stub",
+      "tags": [
+        "logging",
+        "monitoring",
+        "observability",
+        "alerts"
+      ],
+      "trust": "official"
+    },
+    {
+      "capabilities": [
+        "project.graphql",
+        "project.rest"
+      ],
+      "category": "data",
+      "description": "Stripe and PayPal payment integration",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "https://raw.githubusercontent.com/apito-io/hc-payment-plugin/main/logo.png",
+      "id": "hc-payment-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "Payment processing with Stripe and PayPal. Supports subscriptions, one-time payments, refunds, and webhook handling.",
+      "name": "Payment Gateway",
+      "plugin_version": "1.0.0",
+      "publisher": "Apito Team",
+      "releases": [],
+      "repository": "https://github.com/apito-io/hc-payment-plugin",
+      "runtime": {
+        "binary_path": "hc-payment-plugin",
+        "capabilities": [
+          "project.graphql",
+          "project.rest"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-payment-plugin",
+        "version": "1.0.0"
+      },
+      "status": "catalog-stub",
+      "tags": [
+        "payment",
+        "stripe",
+        "paypal",
+        "billing"
+      ],
+      "trust": "official"
+    },
+    {
+      "capabilities": [
+        "system.graphql",
+        "system.rest"
+      ],
+      "category": "communication",
+      "description": "FCM and APNs push notification support",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "https://raw.githubusercontent.com/apito-io/hc-push-notification-plugin/main/logo.png",
+      "id": "hc-push-notification-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "Push notification delivery for Firebase Cloud Messaging (FCM) and Apple Push Notification service (APNs). Supports topic-based and device-targeted notifications.",
+      "name": "Push Notifications",
+      "plugin_version": "1.0.0",
+      "publisher": "Apito Team",
+      "releases": [],
+      "repository": "https://github.com/apito-io/hc-push-notification-plugin",
+      "runtime": {
+        "binary_path": "hc-push-notification-plugin",
+        "capabilities": [
+          "system.graphql",
+          "system.rest"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-push-notification-plugin",
+        "version": "1.0.0"
+      },
+      "status": "catalog-stub",
+      "tags": [
+        "push",
+        "fcm",
+        "apns",
+        "notifications"
+      ],
+      "trust": "official"
+    },
+    {
+      "capabilities": [
+        "system.graphql",
+        "system.rest"
+      ],
+      "category": "security",
+      "description": "API throttling and protection",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "https://raw.githubusercontent.com/apito-io/hc-rate-limit-plugin/main/logo.png",
+      "id": "hc-rate-limit-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "Request rate limiting with IP-based restrictions, custom time windows, burst protection, and analytics dashboard.",
+      "name": "Rate Limiting",
+      "plugin_version": "1.0.0",
+      "publisher": "Apito Team",
+      "releases": [],
+      "repository": "https://github.com/apito-io/hc-rate-limit-plugin",
+      "runtime": {
+        "binary_path": "hc-rate-limit-plugin",
+        "capabilities": [
+          "system.graphql",
+          "system.rest"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-rate-limit-plugin",
+        "version": "1.0.0"
+      },
+      "status": "catalog-stub",
+      "tags": [
+        "security",
+        "throttling",
+        "protection",
+        "api"
+      ],
+      "trust": "official"
+    },
+    {
+      "capabilities": [
+        "system.graphql",
+        "system.rest"
+      ],
+      "category": "data",
+      "description": "Real-time data synchronization via WebSocket",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "https://raw.githubusercontent.com/apito-io/hc-realtime-plugin/main/logo.png",
+      "id": "hc-realtime-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "Real-time data synchronization with WebSocket connections. Supports conflict resolution, offline support, and change tracking.",
+      "name": "Realtime Sync",
+      "plugin_version": "1.0.0",
+      "publisher": "Apito Team",
+      "releases": [],
+      "repository": "https://github.com/apito-io/hc-realtime-plugin",
+      "runtime": {
+        "binary_path": "hc-realtime-plugin",
+        "capabilities": [
+          "system.graphql",
+          "system.rest"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-realtime-plugin",
+        "version": "1.0.0"
+      },
+      "status": "catalog-stub",
+      "tags": [
+        "realtime",
+        "websocket",
+        "sync",
+        "database"
+      ],
+      "trust": "official"
+    },
+    {
+      "capabilities": [
+        "system.graphql",
+        "system.rest"
+      ],
+      "category": "performance",
+      "description": "Cron jobs and scheduled task execution",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "https://raw.githubusercontent.com/apito-io/hc-scheduler-plugin/main/logo.png",
+      "id": "hc-scheduler-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "Task scheduler for cron-style and one-time job execution. Supports job queues, retries, and execution history.",
+      "name": "Task Scheduler",
+      "plugin_version": "1.0.0",
+      "publisher": "Apito Team",
+      "releases": [],
+      "repository": "https://github.com/apito-io/hc-scheduler-plugin",
+      "runtime": {
+        "binary_path": "hc-scheduler-plugin",
+        "capabilities": [
+          "system.graphql",
+          "system.rest"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-scheduler-plugin",
+        "version": "1.0.0"
+      },
+      "status": "catalog-stub",
+      "tags": [
+        "scheduler",
+        "cron",
+        "tasks",
+        "jobs"
+      ],
+      "trust": "official"
+    },
+    {
+      "capabilities": [
+        "system.graphql",
+        "system.rest"
+      ],
+      "category": "data",
+      "description": "Elasticsearch and Meilisearch integration",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "https://raw.githubusercontent.com/apito-io/hc-search-plugin/main/logo.png",
+      "id": "hc-search-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "Full-text search capabilities with Elasticsearch and Meilisearch. Supports indexing, faceted search, and search analytics.",
+      "name": "Full-text Search",
+      "plugin_version": "1.0.0",
+      "publisher": "Apito Team",
+      "releases": [],
+      "repository": "https://github.com/apito-io/hc-search-plugin",
+      "runtime": {
+        "binary_path": "hc-search-plugin",
+        "capabilities": [
+          "system.graphql",
+          "system.rest"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-search-plugin",
+        "version": "1.0.0"
+      },
+      "status": "catalog-stub",
+      "tags": [
+        "search",
+        "elasticsearch",
+        "meilisearch",
+        "full-text"
+      ],
+      "trust": "official"
+    },
+    {
+      "capabilities": [
+        "system.graphql",
+        "system.rest"
+      ],
+      "category": "communication",
+      "description": "Twilio and Vonage SMS integration",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "https://raw.githubusercontent.com/apito-io/hc-sms-plugin/main/logo.png",
+      "id": "hc-sms-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "SMS delivery service with Twilio and Vonage support. Includes templating, delivery status tracking, and multi-region support.",
+      "name": "SMS Service",
+      "plugin_version": "1.0.0",
+      "publisher": "Apito Team",
+      "releases": [],
+      "repository": "https://github.com/apito-io/hc-sms-plugin",
+      "runtime": {
+        "binary_path": "hc-sms-plugin",
+        "capabilities": [
+          "system.graphql",
+          "system.rest"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-sms-plugin",
+        "version": "1.0.0"
+      },
+      "status": "catalog-stub",
+      "tags": [
+        "sms",
+        "twilio",
+        "vonage",
+        "messaging"
+      ],
+      "trust": "official"
+    },
+    {
+      "capabilities": [
+        "system.graphql",
+        "system.rest"
+      ],
+      "category": "storage",
+      "description": "AWS S3, Google Cloud Storage, and local file storage",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "https://raw.githubusercontent.com/apito-io/hc-storage-plugin/main/logo.png",
+      "id": "hc-storage-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "Unified file storage abstraction supporting AWS S3, Google Cloud Storage, Cloudflare R2, and local storage. Includes image optimization and file upload validation.",
+      "name": "File Storage",
+      "plugin_version": "1.0.0",
+      "publisher": "Apito Team",
+      "releases": [],
+      "repository": "https://github.com/apito-io/hc-storage-plugin",
+      "runtime": {
+        "binary_path": "hc-storage-plugin",
+        "capabilities": [
+          "system.graphql",
+          "system.rest"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-storage-plugin",
+        "version": "1.0.0"
+      },
+      "status": "catalog-stub",
+      "tags": [
+        "storage",
+        "aws",
+        "gcp",
+        "s3"
+      ],
+      "trust": "official"
+    },
+    {
+      "approval": {
+        "reviewed_at": "2026-09-03",
+        "reviewed_by": "apito"
+      },
+      "capabilities": [
+        "project.graphql",
+        "project.rest",
+        "console.settings"
+      ],
+      "category": "data",
+      "description": "Stripe Checkout and webhooks for your app.",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "",
+      "id": "hc-stripe-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "Create Checkout sessions and Customer Portal links, then receive paid or failed events on a per-project webhook URL. Not Apito SaaS billing.",
+      "name": "Stripe Billing",
+      "plugin_version": "0.0.1",
+      "publisher": "Apito",
+      "releases": [
+        {
+          "arch": "amd64",
+          "os": "darwin",
+          "sha256": "3b53274718f7948023320f6e3d6297dcf93fdc6ace20b1a2ac553f641e38e9f4",
+          "size": 5273025,
+          "url": "https://github.com/apito-io/hc-stripe-plugin/releases/download/v0.0.1/hc-stripe-plugin-v0.0.1-darwin-amd64.zip"
+        },
+        {
+          "arch": "arm64",
+          "os": "darwin",
+          "sha256": "bfd820f60ed5ac827db7a99fcf452bf6c7a3fd2828abc8c35b30d6c11e709ae4",
+          "size": 4889216,
+          "url": "https://github.com/apito-io/hc-stripe-plugin/releases/download/v0.0.1/hc-stripe-plugin-v0.0.1-darwin-arm64.zip"
+        },
+        {
+          "arch": "amd64",
+          "os": "linux",
+          "sha256": "e66b390965d19c947436bc8edbb4b1868de7b71cf7ce331115a44f6f55fc2399",
+          "size": 5157036,
+          "url": "https://github.com/apito-io/hc-stripe-plugin/releases/download/v0.0.1/hc-stripe-plugin-v0.0.1-linux-amd64.zip"
+        },
+        {
+          "arch": "arm64",
+          "os": "linux",
+          "sha256": "73dd06637705a058cb8dc8a6a04effe781cb1278a70165aa9cabacc71ebf3c29",
+          "size": 4675374,
+          "url": "https://github.com/apito-io/hc-stripe-plugin/releases/download/v0.0.1/hc-stripe-plugin-v0.0.1-linux-arm64.zip"
+        },
+        {
+          "arch": "amd64",
+          "os": "windows",
+          "sha256": "04c4f957f8744d48f0b1b2f962c4140a7cd25f98a8e1430911b2bdb2577fd57a",
+          "size": 5301032,
+          "url": "https://github.com/apito-io/hc-stripe-plugin/releases/download/v0.0.1/hc-stripe-plugin-v0.0.1-windows-amd64.zip"
+        },
+        {
+          "arch": "arm64",
+          "os": "windows",
+          "sha256": "41d1d69872f3c0c01c0440a7f61854105d94753fc5e8f5f3f6511d736f5cc76a",
+          "size": 4745346,
+          "url": "https://github.com/apito-io/hc-stripe-plugin/releases/download/v0.0.1/hc-stripe-plugin-v0.0.1-windows-arm64.zip"
+        }
+      ],
+      "repository": "https://github.com/apito-io/hc-stripe-plugin",
+      "runtime": {
+        "binary_path": "hc-stripe-plugin",
+        "capabilities": [
+          "project.graphql",
+          "project.rest",
+          "console.settings"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-stripe-plugin",
+        "version": "0.0.1"
+      },
+      "status": "available",
+      "tags": [
+        "stripe",
+        "billing",
+        "checkout",
+        "payments"
+      ],
+      "trust": "official"
+    },
+    {
+      "capabilities": [
+        "system.graphql",
+        "system.rest"
+      ],
+      "category": "communication",
+      "description": "Advanced webhook management and delivery",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "https://raw.githubusercontent.com/apito-io/hc-webhook-plugin/main/logo.png",
+      "id": "hc-webhook-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "Webhook management with event filtering, retry mechanisms, payload transformation, and delivery tracking.",
+      "name": "Webhook Dispatcher",
+      "plugin_version": "1.0.0",
+      "publisher": "Apito Team",
+      "releases": [],
+      "repository": "https://github.com/apito-io/hc-webhook-plugin",
+      "runtime": {
+        "binary_path": "hc-webhook-plugin",
+        "capabilities": [
+          "system.graphql",
+          "system.rest"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-webhook-plugin",
+        "version": "1.0.0"
+      },
+      "status": "catalog-stub",
+      "tags": [
+        "webhooks",
+        "events",
+        "dispatch",
+        "api"
+      ],
+      "trust": "official"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "hc-rate-limit-plugin",
+  "name": "Rate Limiting",
+  "publisher": "Apito Team",
+  "repository": "https://github.com/apito-io/hc-rate-limit-plugin",
+  "license": "Apache-2.0",
+  "description": "API throttling and protection",
+  "long_description": "Request rate limiting with IP-based restrictions, custom time windows, burst protection, and analytics dashboard.",
+  "icon": "https://raw.githubusercontent.com/apito-io/hc-rate-limit-plugin/main/logo.png",
+  "tags": [
+    "security",
+    "throttling",
+    "protection",
+    "api"
+  ],
+  "category": "security",
+  "language": "go",
+  "capabilities": [
+    "system.graphql",
+    "system.rest"
+  ],
+  "engine_semver": ">=2.4.0",
+  "plugin_version": "1.0.0",
+  "trust": "official",
+  "status": "catalog-stub",
+  "documentation_url": "/docs/platform/plugins/",
+  "runtime": {
+    "id": "hc-rate-limit-plugin",
+    "version": "1.0.0",
+    "binary_path": "hc-rate-limit-plugin",
+    "capabilities": [
+      "system.graphql",
+      "system.rest"
+    ],
+    "handshake": {
+      "protocol_version": 1,
+      "magic_cookie_key": "APITO_PLUGIN",
+      "magic_cookie_value": "apito_plugin_magic_cookie_v1"
+    }
+  },
+  "releases": []
+}

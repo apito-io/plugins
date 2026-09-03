@@ -1,0 +1,42 @@
+{
+  "id": "hc-email-plugin",
+  "name": "Email Service",
+  "publisher": "Apito Team",
+  "repository": "https://github.com/apito-io/hc-email-plugin",
+  "license": "Apache-2.0",
+  "description": "SendGrid, Mailgun, and SMTP support",
+  "long_description": "Email delivery service with support for SendGrid, Mailgun, and custom SMTP servers. Includes template management and email analytics.",
+  "icon": "https://raw.githubusercontent.com/apito-io/hc-email-plugin/main/logo.png",
+  "tags": [
+    "email",
+    "sendgrid",
+    "mailgun",
+    "smtp"
+  ],
+  "category": "communication",
+  "language": "go",
+  "capabilities": [
+    "system.graphql",
+    "system.rest"
+  ],
+  "engine_semver": ">=2.4.0",
+  "plugin_version": "1.0.0",
+  "trust": "official",
+  "status": "catalog-stub",
+  "documentation_url": "/docs/platform/plugins/",
+  "runtime": {
+    "id": "hc-email-plugin",
+    "version": "1.0.0",
+    "binary_path": "hc-email-plugin",
+    "capabilities": [
+      "system.graphql",
+      "system.rest"
+    ],
+    "handshake": {
+      "protocol_version": 1,
+      "magic_cookie_key": "APITO_PLUGIN",
+      "magic_cookie_value": "apito_plugin_magic_cookie_v1"
+    }
+  },
+  "releases": []
+}

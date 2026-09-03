@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://apito.io/schema/plugin-catalog.json",
+  "title": "Apito plugin catalog",
+  "type": "object",
+  "required": ["schema_version", "plugins"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "generated_at": { "type": "string" },
+    "plugins": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/entry" }
+    }
+  },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "required": [
+        "id", "name", "publisher", "repository", "license", "description",
+        "category", "language", "capabilities", "engine_semver",
+        "plugin_version", "trust", "status", "runtime"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^hc-[a-z0-9-]+-plugin$" },
+        "name": { "type": "string", "minLength": 1 },
+        "publisher": { "type": "string", "minLength": 1 },
+        "repository": { "type": "string", "pattern": "^https://github.com/[^/]+/[^/]+$" },
+        "license": { "type": "string" },
+        "description": { "type": "string" },
+        "long_description": { "type": "string" },
+        "icon": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "category": { "type": "string" },
+        "language": { "type": "string" },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "system.graphql", "system.rest", "project.graphql", "project.rest",
+              "console.routes", "console.settings", "content.fields", "system.events"
+            ]
+          }
+        },
+        "engine_semver": { "type": "string" },
+        "plugin_version": { "type": "string" },
+        "trust": { "type": "string", "enum": ["official", "community"] },
+        "status": { "type": "string", "enum": ["available", "deprecated", "blocked", "catalog-stub"] },
+        "documentation_url": { "type": "string" },
+        "runtime": { "$ref": "#/$defs/runtime" },
+        "releases": { "type": "array", "items": { "$ref": "#/$defs/release" } },
+        "approval": {
+          "type": "object",
+          "properties": {
+            "reviewed_by": { "type": "string" },
+            "reviewed_at": { "type": "string" }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "available" } } },
+          "then": {
+            "properties": {
+              "releases": {
+                "type": "array"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "runtime": {
+      "type": "object",
+      "required": ["id", "version", "binary_path", "capabilities", "handshake"],
+      "properties": {
+        "id": { "type": "string" },
+        "version": { "type": "string" },
+        "binary_path": { "type": "string" },
+        "capabilities": { "type": "array", "items": { "type": "string" } },
+        "handshake": {
+          "type": "object",
+          "required": ["protocol_version", "magic_cookie_key", "magic_cookie_value"],
+          "properties": {
+            "protocol_version": { "type": "integer" },
+            "magic_cookie_key": { "type": "string", "const": "APITO_PLUGIN" },
+            "magic_cookie_value": { "type": "string", "const": "apito_plugin_magic_cookie_v1" }
+          }
+        }
+      }
+    },
+    "release": {
+      "type": "object",
+      "required": ["os", "arch", "url", "size", "sha256"],
+      "properties": {
+        "os": { "type": "string", "enum": ["linux", "darwin", "windows"] },
+        "arch": { "type": "string", "enum": ["amd64", "arm64"] },
+        "url": { "type": "string", "pattern": "^https://github.com/.+/releases/download/" },
+        "size": { "type": "integer", "minimum": 0 },
+        "sha256": { "type": "string" }
+      },
+      "not": {
+        "properties": { "url": { "pattern": "/latest" } }
+      }
+    }
+  }
+}

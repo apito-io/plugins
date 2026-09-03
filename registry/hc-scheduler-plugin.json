@@ -1,0 +1,42 @@
+{
+  "id": "hc-scheduler-plugin",
+  "name": "Task Scheduler",
+  "publisher": "Apito Team",
+  "repository": "https://github.com/apito-io/hc-scheduler-plugin",
+  "license": "Apache-2.0",
+  "description": "Cron jobs and scheduled task execution",
+  "long_description": "Task scheduler for cron-style and one-time job execution. Supports job queues, retries, and execution history.",
+  "icon": "https://raw.githubusercontent.com/apito-io/hc-scheduler-plugin/main/logo.png",
+  "tags": [
+    "scheduler",
+    "cron",
+    "tasks",
+    "jobs"
+  ],
+  "category": "performance",
+  "language": "go",
+  "capabilities": [
+    "system.graphql",
+    "system.rest"
+  ],
+  "engine_semver": ">=2.4.0",
+  "plugin_version": "1.0.0",
+  "trust": "official",
+  "status": "catalog-stub",
+  "documentation_url": "/docs/platform/plugins/",
+  "runtime": {
+    "id": "hc-scheduler-plugin",
+    "version": "1.0.0",
+    "binary_path": "hc-scheduler-plugin",
+    "capabilities": [
+      "system.graphql",
+      "system.rest"
+    ],
+    "handshake": {
+      "protocol_version": 1,
+      "magic_cookie_key": "APITO_PLUGIN",
+      "magic_cookie_value": "apito_plugin_magic_cookie_v1"
+    }
+  },
+  "releases": []
+}

@@ -1,0 +1,42 @@
+{
+  "id": "hc-payment-plugin",
+  "name": "Payment Gateway",
+  "publisher": "Apito Team",
+  "repository": "https://github.com/apito-io/hc-payment-plugin",
+  "license": "Apache-2.0",
+  "description": "Stripe and PayPal payment integration",
+  "long_description": "Payment processing with Stripe and PayPal. Supports subscriptions, one-time payments, refunds, and webhook handling.",
+  "icon": "https://raw.githubusercontent.com/apito-io/hc-payment-plugin/main/logo.png",
+  "tags": [
+    "payment",
+    "stripe",
+    "paypal",
+    "billing"
+  ],
+  "category": "data",
+  "language": "go",
+  "capabilities": [
+    "project.graphql",
+    "project.rest"
+  ],
+  "engine_semver": ">=2.4.0",
+  "plugin_version": "1.0.0",
+  "trust": "official",
+  "status": "catalog-stub",
+  "documentation_url": "/docs/platform/plugins/",
+  "runtime": {
+    "id": "hc-payment-plugin",
+    "version": "1.0.0",
+    "binary_path": "hc-payment-plugin",
+    "capabilities": [
+      "project.graphql",
+      "project.rest"
+    ],
+    "handshake": {
+      "protocol_version": 1,
+      "magic_cookie_key": "APITO_PLUGIN",
+      "magic_cookie_value": "apito_plugin_magic_cookie_v1"
+    }
+  },
+  "releases": []
+}
