@@ -77,7 +77,15 @@ jobs:
         env:
           PLUGIN_REGISTRY_SIGNING_KEY: ${{ secrets.PLUGIN_REGISTRY_SIGNING_KEY }}
         run: |
+          if [ -z "$PLUGIN_REGISTRY_SIGNING_KEY" ]; then
+            echo "PLUGIN_REGISTRY_SIGNING_KEY missing"
+            exit 1
+          fi
           go run . ../..
+
+      - name: Verify catalog.sig matches keys/catalog.pub
+        working-directory: tools/catalog
+        run: go run . -verify ../..
 
       - name: Commit and push
         env:

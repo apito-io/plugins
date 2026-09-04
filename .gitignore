@@ -32,5 +32,4 @@ pnpm-lock.yaml
 *.log
 debug/
 
-# env files tracked for single-dev monorepo setup (do not re-ignore .env / .env.local)
-.env.*.local
+keys/catalog.priv

@@ -77,10 +77,13 @@ jobs:
           PLUGIN_REGISTRY_SIGNING_KEY: ${{ secrets.PLUGIN_REGISTRY_SIGNING_KEY }}
         run: |
           if [ -z "$PLUGIN_REGISTRY_SIGNING_KEY" ]; then
-            echo "No PLUGIN_REGISTRY_SIGNING_KEY; keep committed dist/"
-            exit 0
+            echo "PLUGIN_REGISTRY_SIGNING_KEY missing; cannot publish a signed catalog"
+            exit 1
           fi
           go run . ../..
+      - name: Verify catalog.sig matches keys/catalog.pub
+        working-directory: tools/catalog
+        run: go run . -verify ../..
       - name: Publish catalog-v1 release
         uses: softprops/action-gh-release@v2
         with:

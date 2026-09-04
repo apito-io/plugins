@@ -19,9 +19,23 @@ type catalog struct {
 }
 
 func main() {
+	args := os.Args[1:]
+	cmd := ""
+	if len(args) > 0 && strings.HasPrefix(args[0], "-") {
+		cmd = args[0]
+		args = args[1:]
+	}
 	root := "."
-	if len(os.Args) > 1 {
-		root = os.Args[1]
+	if len(args) > 0 {
+		root = args[0]
+	}
+	switch cmd {
+	case "-verify":
+		verifyCatalog(root)
+		return
+	case "-genkey":
+		genKey(root)
+		return
 	}
 	regDir := filepath.Join(root, "registry")
 	entries, err := os.ReadDir(regDir)
@@ -128,6 +142,55 @@ func main() {
 		fatal(err)
 	}
 	fmt.Println("catalog written and signed")
+}
+
+func verifyCatalog(root string) {
+	pubHex, err := os.ReadFile(filepath.Join(root, "keys", "catalog.pub"))
+	if err != nil {
+		fatal(err)
+	}
+	pubRaw, err := hex.DecodeString(strings.TrimSpace(string(pubHex)))
+	if err != nil || len(pubRaw) != ed25519.PublicKeySize {
+		fatal(fmt.Errorf("keys/catalog.pub must be %d-byte hex", ed25519.PublicKeySize))
+	}
+	body, err := os.ReadFile(filepath.Join(root, "dist", "catalog.json"))
+	if err != nil {
+		fatal(err)
+	}
+	sigHex, err := os.ReadFile(filepath.Join(root, "dist", "catalog.sig"))
+	if err != nil {
+		fatal(err)
+	}
+	sig, err := hex.DecodeString(strings.TrimSpace(string(sigHex)))
+	if err != nil || len(sig) != ed25519.SignatureSize {
+		fatal(fmt.Errorf("dist/catalog.sig is not a 64-byte hex signature"))
+	}
+	if !ed25519.Verify(ed25519.PublicKey(pubRaw), body, sig) {
+		fatal(fmt.Errorf("catalog.sig does not match keys/catalog.pub — PLUGIN_REGISTRY_SIGNING_KEY is the wrong private key or catalog.json was rewritten after signing"))
+	}
+	fmt.Println("catalog signature ok")
+}
+
+func genKey(root string) {
+	dir := filepath.Join(root, "keys")
+	if err := os.MkdirAll(dir, 0o755); err != nil {
+		fatal(err)
+	}
+	privPath := filepath.Join(dir, "catalog.priv")
+	if _, err := os.Stat(privPath); err == nil && os.Getenv("FORCE_CATALOG_KEY") != "1" {
+		fatal(fmt.Errorf("%s already exists; set FORCE_CATALOG_KEY=1 to overwrite", privPath))
+	}
+	pub, priv, err := ed25519.GenerateKey(nil)
+	if err != nil {
+		fatal(err)
+	}
+	if err := os.WriteFile(privPath, []byte(hex.EncodeToString(priv)+"\n"), 0o600); err != nil {
+		fatal(err)
+	}
+	if err := os.WriteFile(filepath.Join(dir, "catalog.pub"), []byte(hex.EncodeToString(pub)+"\n"), 0o644); err != nil {
+		fatal(err)
+	}
+	fmt.Println("wrote keys/catalog.pub and keys/catalog.priv (never commit the private key)")
 }
 
 func fatal(err error) {
