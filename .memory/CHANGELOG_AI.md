@@ -4,6 +4,12 @@ Not git history — the *reasoning* behind changes. Newest on top.
 Format per entry: date, **Changed**, **Why**, **Affected**.
 
 ---
+## 2026-10-18 — full Apache LICENSE text
+
+- **Changed:** Replaced short LICENSE notices with the full Apache-2.0 text and added a repo-root LICENSE.
+- **Why:** GitHub license detection needs the full license, not a 3-line pointer.
+- **Affected:** `LICENSE` and the short `hc-*/LICENSE` files. Already-full licenses were not rewritten. Uncommitted.
+
 ## 2026-09-03 — Discord, Stripe, Cloudinary official plugins
 
 - **Changed:** Real plugins (not catalog-stub): Discord notifications,
