@@ -20,13 +20,13 @@
     "console.settings"
   ],
   "engine_semver": ">=2.4.0",
-  "plugin_version": "0.1.0",
+  "plugin_version": "0.1.1",
   "trust": "official",
   "status": "available",
   "documentation_url": "/docs/platform/plugins/",
   "runtime": {
     "id": "hc-eps-payment-plugin",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "binary_path": "hc-eps-payment-plugin",
     "capabilities": [
       "project.graphql",
@@ -79,44 +79,44 @@
     {
       "os": "darwin",
       "arch": "amd64",
-      "url": "https://github.com/apito-io/hc-eps-payment-plugin/releases/download/v0.1.0/hc-eps-payment-plugin-v0.1.0-darwin-amd64.zip",
-      "size": 5292435,
-      "sha256": "29b02824905b7ffa05d0bb0df69fd6bfeee02d32bc996d9b828c77310c0e3bc4"
+      "url": "https://github.com/apito-io/hc-eps-payment-plugin/releases/download/v0.1.1/hc-eps-payment-plugin-v0.1.1-darwin-amd64.zip",
+      "size": 5294420,
+      "sha256": "756e919e1cf64e059d10f52945bafa169f16693dec1d42136c191329aa34fe02"
     },
     {
       "os": "darwin",
       "arch": "arm64",
-      "url": "https://github.com/apito-io/hc-eps-payment-plugin/releases/download/v0.1.0/hc-eps-payment-plugin-v0.1.0-darwin-arm64.zip",
-      "size": 4908918,
-      "sha256": "4fb072762aa5deff57e0b9630fe93f660926f8e598d717b39be2da1de363c44a"
+      "url": "https://github.com/apito-io/hc-eps-payment-plugin/releases/download/v0.1.1/hc-eps-payment-plugin-v0.1.1-darwin-arm64.zip",
+      "size": 4909021,
+      "sha256": "58d07a3beb549e48fe90b77b52f76d511bd5564e900af1aff56654db419446e0"
     },
     {
       "os": "linux",
       "arch": "amd64",
-      "url": "https://github.com/apito-io/hc-eps-payment-plugin/releases/download/v0.1.0/hc-eps-payment-plugin-v0.1.0-linux-amd64.zip",
-      "size": 5176911,
-      "sha256": "bfdc1b9ecde1c2850b21950528072d99b86ea205410d850db206bb8e91234bbb"
+      "url": "https://github.com/apito-io/hc-eps-payment-plugin/releases/download/v0.1.1/hc-eps-payment-plugin-v0.1.1-linux-amd64.zip",
+      "size": 5177467,
+      "sha256": "70210ee4d0b831c867897d65c9e72329f0a6f212e69fcca74f9b1b6f95684bcf"
     },
     {
       "os": "linux",
       "arch": "arm64",
-      "url": "https://github.com/apito-io/hc-eps-payment-plugin/releases/download/v0.1.0/hc-eps-payment-plugin-v0.1.0-linux-arm64.zip",
-      "size": 4692691,
-      "sha256": "48dbb15df7c485d14857c15ef5539084920c3bd419524f11a3667b6d7c26a702"
+      "url": "https://github.com/apito-io/hc-eps-payment-plugin/releases/download/v0.1.1/hc-eps-payment-plugin-v0.1.1-linux-arm64.zip",
+      "size": 4694679,
+      "sha256": "cd3107af743ff4f8cf10f483fdad21862fa04e7839f776ab50c29945410fe5f3"
     },
     {
       "os": "windows",
       "arch": "amd64",
-      "url": "https://github.com/apito-io/hc-eps-payment-plugin/releases/download/v0.1.0/hc-eps-payment-plugin-v0.1.0-windows-amd64.zip",
-      "size": 5323270,
-      "sha256": "1f672e480f21d5147a186d365903239207af566632ea07e838b611e69700ec4b"
+      "url": "https://github.com/apito-io/hc-eps-payment-plugin/releases/download/v0.1.1/hc-eps-payment-plugin-v0.1.1-windows-amd64.zip",
+      "size": 5321715,
+      "sha256": "de8590c11dd6d6db91cb2ecc6f8ce64e456aeff2fc428253831cfe50bfd020c3"
     },
     {
       "os": "windows",
       "arch": "arm64",
-      "url": "https://github.com/apito-io/hc-eps-payment-plugin/releases/download/v0.1.0/hc-eps-payment-plugin-v0.1.0-windows-arm64.zip",
-      "size": 4764649,
-      "sha256": "e1a645aac99eeb4377074e5b7f77022a6661a4ecbd47d7b34fe99f3bc3c84091"
+      "url": "https://github.com/apito-io/hc-eps-payment-plugin/releases/download/v0.1.1/hc-eps-payment-plugin-v0.1.1-windows-arm64.zip",
+      "size": 4764926,
+      "sha256": "0744538d855f86742bdb95cfe0c3e18193619274d86cf58b0679cbf8b67e3410"
     }
   ],
   "approval": {
