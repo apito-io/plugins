@@ -1,0 +1,50 @@
+{
+  "id": "hc-paddle-payment-plugin",
+  "name": "Paddle",
+  "publisher": "Apito",
+  "repository": "https://github.com/apito-io/hc-paddle-payment-plugin",
+  "license": "Apache-2.0",
+  "description": "Project Paddle vendor settings. Billing calls are not implemented yet.",
+  "long_description": "Stores a project's Paddle vendor id and auth code. Webhook, verify, and cancel return not implemented. This is not Apito Cloud billing.",
+  "icon": "",
+  "tags": ["paddle", "payment"],
+  "category": "payments",
+  "language": "go",
+  "capabilities": ["project.graphql", "project.rest", "console.settings"],
+  "engine_semver": ">=2.4.0",
+  "plugin_version": "0.1.0",
+  "trust": "official",
+  "status": "available",
+  "documentation_url": "/docs/platform/plugins/",
+  "runtime": {
+    "id": "hc-paddle-payment-plugin",
+    "version": "0.1.0",
+    "binary_path": "hc-paddle-payment-plugin",
+    "capabilities": ["project.graphql", "project.rest", "console.settings"],
+    "handshake": {
+      "protocol_version": 1,
+      "magic_cookie_key": "APITO_PLUGIN",
+      "magic_cookie_value": "apito_plugin_magic_cookie_v1"
+    }
+  },
+  "contributions": {
+    "api": {
+      "scope": "project",
+      "mutations": [
+        { "name": "paddleInitialize", "description": "Project Paddle billing is not implemented" },
+        { "name": "paddleVerify", "description": "Project Paddle verify is not implemented" },
+        { "name": "paddleWebhook", "description": "Project Paddle webhook is not implemented" },
+        { "name": "paddleCancel", "description": "Project Paddle cancel is not implemented" }
+      ],
+      "rest": [
+        { "method": "GET", "path": "/config", "description": "Non-secret project Paddle flags" }
+      ]
+    },
+    "ui": {
+      "ui_available": true,
+      "navigation": [{ "hidden": true, "settings": true, "label": "Paddle" }]
+    }
+  },
+  "releases": [],
+  "approval": { "reviewed_by": "apito", "reviewed_at": "2026-11-09" }
+}
