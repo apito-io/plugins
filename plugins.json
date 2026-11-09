@@ -72,6 +72,20 @@
       "capabilities": [
         "project.graphql",
         "project.rest",
+        "console.settings"
+      ],
+      "description": "Record a tenant subscription from a signed webhook or the logged-in app.",
+      "github_url": "https://github.com/apito-io/hc-custom-payment-plugin",
+      "id": "hc-custom-payment-plugin",
+      "is_official": true,
+      "name": "Custom",
+      "status": "available",
+      "version": "0.1.0"
+    },
+    {
+      "capabilities": [
+        "project.graphql",
+        "project.rest",
         "console.settings",
         "system.events"
       ],
@@ -112,6 +126,20 @@
     },
     {
       "capabilities": [
+        "project.graphql",
+        "project.rest",
+        "console.settings"
+      ],
+      "description": "Google Play Billing and Real-time developer notifications for SaaS tenant plans.",
+      "github_url": "https://github.com/apito-io/hc-google-play-payment-plugin",
+      "id": "hc-google-play-payment-plugin",
+      "is_official": true,
+      "name": "Google Play",
+      "status": "available",
+      "version": "0.1.0"
+    },
+    {
+      "capabilities": [
         "system.graphql",
         "system.rest"
       ],
@@ -122,6 +150,20 @@
       "name": "Logging \u0026 Monitoring",
       "status": "catalog-stub",
       "version": "1.0.0"
+    },
+    {
+      "capabilities": [
+        "project.graphql",
+        "project.rest",
+        "console.settings"
+      ],
+      "description": "Project Paddle vendor settings. Billing calls are not implemented yet.",
+      "github_url": "https://github.com/apito-io/hc-paddle-payment-plugin",
+      "id": "hc-paddle-payment-plugin",
+      "is_official": true,
+      "name": "Paddle",
+      "status": "available",
+      "version": "0.1.0"
     },
     {
       "capabilities": [

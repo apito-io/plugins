@@ -7,10 +7,18 @@
   "description": "Google Play Billing and Real-time developer notifications for SaaS tenant plans.",
   "long_description": "The engine install is shared. Each project activates Google Play and stores its own package name and service account. Purchases start in the app. Verify and Real-time developer notifications settle the tenant ledger.",
   "icon": "",
-  "tags": ["google-play", "payment", "subscription"],
+  "tags": [
+    "google-play",
+    "payment",
+    "subscription"
+  ],
   "category": "payments",
   "language": "go",
-  "capabilities": ["project.graphql", "project.rest", "console.settings"],
+  "capabilities": [
+    "project.graphql",
+    "project.rest",
+    "console.settings"
+  ],
   "engine_semver": ">=2.4.0",
   "plugin_version": "0.1.0",
   "trust": "official",
@@ -20,7 +28,11 @@
     "id": "hc-google-play-payment-plugin",
     "version": "0.1.0",
     "binary_path": "hc-google-play-payment-plugin",
-    "capabilities": ["project.graphql", "project.rest", "console.settings"],
+    "capabilities": [
+      "project.graphql",
+      "project.rest",
+      "console.settings"
+    ],
     "handshake": {
       "protocol_version": 1,
       "magic_cookie_key": "APITO_PLUGIN",
@@ -31,20 +43,88 @@
     "api": {
       "scope": "project",
       "mutations": [
-        { "name": "playInitialize", "description": "Google Play purchases start in the app" },
-        { "name": "playVerify", "description": "Verify a Google Play purchase token" },
-        { "name": "playWebhook", "description": "Handle a Google Play developer notification" },
-        { "name": "playCancel", "description": "Cancel or revoke a Google Play subscription" }
+        {
+          "name": "playInitialize",
+          "description": "Google Play purchases start in the app"
+        },
+        {
+          "name": "playVerify",
+          "description": "Verify a Google Play purchase token"
+        },
+        {
+          "name": "playWebhook",
+          "description": "Handle a Google Play developer notification"
+        },
+        {
+          "name": "playCancel",
+          "description": "Cancel or revoke a Google Play subscription"
+        }
       ],
       "rest": [
-        { "method": "GET", "path": "/config", "description": "Non-secret Google Play configuration flags" }
+        {
+          "method": "GET",
+          "path": "/config",
+          "description": "Non-secret Google Play configuration flags"
+        }
       ]
     },
     "ui": {
       "ui_available": true,
-      "navigation": [{ "hidden": true, "settings": true, "label": "Google Play" }]
+      "navigation": [
+        {
+          "hidden": true,
+          "settings": true,
+          "label": "Google Play"
+        }
+      ]
     }
   },
-  "releases": [],
-  "approval": { "reviewed_by": "apito", "reviewed_at": "2026-11-09" }
+  "releases": [
+    {
+      "os": "darwin",
+      "arch": "amd64",
+      "url": "https://github.com/apito-io/hc-google-play-payment-plugin/releases/download/v0.1.0/hc-google-play-payment-plugin-v0.1.0-darwin-amd64.zip",
+      "size": 6105766,
+      "sha256": "9cb3501527afd8fff3e96becdf5ae2087c63cbd2e84f88b4b98189da6b54d1ca"
+    },
+    {
+      "os": "darwin",
+      "arch": "arm64",
+      "url": "https://github.com/apito-io/hc-google-play-payment-plugin/releases/download/v0.1.0/hc-google-play-payment-plugin-v0.1.0-darwin-arm64.zip",
+      "size": 5664368,
+      "sha256": "d2f08e9806b6719c10d2f23d472f8dee1d534cb704638eab1213008825617b70"
+    },
+    {
+      "os": "linux",
+      "arch": "amd64",
+      "url": "https://github.com/apito-io/hc-google-play-payment-plugin/releases/download/v0.1.0/hc-google-play-payment-plugin-v0.1.0-linux-amd64.zip",
+      "size": 5979565,
+      "sha256": "80d2d3031f9956b0df823fe2b44d1fe177c0528aec855ad35c588b7d817c3803"
+    },
+    {
+      "os": "linux",
+      "arch": "arm64",
+      "url": "https://github.com/apito-io/hc-google-play-payment-plugin/releases/download/v0.1.0/hc-google-play-payment-plugin-v0.1.0-linux-arm64.zip",
+      "size": 5420016,
+      "sha256": "06897d351f2c0d92ca1f4eab263b8f535fb29b36cd20641846f8998377fc18c8"
+    },
+    {
+      "os": "windows",
+      "arch": "amd64",
+      "url": "https://github.com/apito-io/hc-google-play-payment-plugin/releases/download/v0.1.0/hc-google-play-payment-plugin-v0.1.0-windows-amd64.zip",
+      "size": 6140850,
+      "sha256": "8da9a719471f376ebfb8b6ebfd22575ff6e0b91299950bc595e3f7e23e635e40"
+    },
+    {
+      "os": "windows",
+      "arch": "arm64",
+      "url": "https://github.com/apito-io/hc-google-play-payment-plugin/releases/download/v0.1.0/hc-google-play-payment-plugin-v0.1.0-windows-arm64.zip",
+      "size": 5496360,
+      "sha256": "04e1bd5fb6e177a4806df22f88c062af3bdbf63da12c06c7e2dff012209bd91c"
+    }
+  ],
+  "approval": {
+    "reviewed_by": "apito",
+    "reviewed_at": "2026-11-09"
+  }
 }

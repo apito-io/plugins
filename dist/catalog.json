@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-09T08:01:45Z",
+  "generated_at": "2026-11-09T09:03:44Z",
   "plugins": [
     {
       "capabilities": [
@@ -333,6 +333,97 @@
     },
     {
       "approval": {
+        "reviewed_at": "2026-11-09",
+        "reviewed_by": "apito"
+      },
+      "capabilities": [
+        "project.graphql",
+        "project.rest",
+        "console.settings"
+      ],
+      "category": "payments",
+      "contributions": {
+        "api": {
+          "mutations": [
+            {
+              "description": "Custom payments are recorded by webhook",
+              "name": "customInitialize"
+            },
+            {
+              "description": "Custom payments are recorded by webhook",
+              "name": "customVerify"
+            },
+            {
+              "description": "Record a custom payment webhook",
+              "name": "customWebhook"
+            },
+            {
+              "description": "End a custom subscription now",
+              "name": "customCancel"
+            },
+            {
+              "description": "Generate a new webhook secret",
+              "name": "customRotateSecret"
+            }
+          ],
+          "rest": [
+            {
+              "description": "Non-secret custom payment flags",
+              "method": "GET",
+              "path": "/config"
+            }
+          ],
+          "scope": "project"
+        },
+        "ui": {
+          "navigation": [
+            {
+              "hidden": true,
+              "label": "Custom",
+              "settings": true
+            }
+          ],
+          "ui_available": true
+        }
+      },
+      "description": "Record a tenant subscription from a signed webhook or the logged-in app.",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "",
+      "id": "hc-custom-payment-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "The engine install is shared. Each project stores its own webhook secret. Callers send X-Apito-Webhook-Secret. The logged-in app can submit without that header.",
+      "name": "Custom",
+      "plugin_version": "0.1.0",
+      "publisher": "Apito",
+      "releases": [],
+      "repository": "https://github.com/apito-io/hc-custom-payment-plugin",
+      "runtime": {
+        "binary_path": "hc-custom-payment-plugin",
+        "capabilities": [
+          "project.graphql",
+          "project.rest",
+          "console.settings"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-custom-payment-plugin",
+        "version": "0.1.0"
+      },
+      "status": "available",
+      "tags": [
+        "custom",
+        "payment",
+        "webhook"
+      ],
+      "trust": "official"
+    },
+    {
+      "approval": {
         "reviewed_at": "2026-09-03",
         "reviewed_by": "apito"
       },
@@ -592,6 +683,136 @@
       "trust": "official"
     },
     {
+      "approval": {
+        "reviewed_at": "2026-11-09",
+        "reviewed_by": "apito"
+      },
+      "capabilities": [
+        "project.graphql",
+        "project.rest",
+        "console.settings"
+      ],
+      "category": "payments",
+      "contributions": {
+        "api": {
+          "mutations": [
+            {
+              "description": "Google Play purchases start in the app",
+              "name": "playInitialize"
+            },
+            {
+              "description": "Verify a Google Play purchase token",
+              "name": "playVerify"
+            },
+            {
+              "description": "Handle a Google Play developer notification",
+              "name": "playWebhook"
+            },
+            {
+              "description": "Cancel or revoke a Google Play subscription",
+              "name": "playCancel"
+            }
+          ],
+          "rest": [
+            {
+              "description": "Non-secret Google Play configuration flags",
+              "method": "GET",
+              "path": "/config"
+            }
+          ],
+          "scope": "project"
+        },
+        "ui": {
+          "navigation": [
+            {
+              "hidden": true,
+              "label": "Google Play",
+              "settings": true
+            }
+          ],
+          "ui_available": true
+        }
+      },
+      "description": "Google Play Billing and Real-time developer notifications for SaaS tenant plans.",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "",
+      "id": "hc-google-play-payment-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "The engine install is shared. Each project activates Google Play and stores its own package name and service account. Purchases start in the app. Verify and Real-time developer notifications settle the tenant ledger.",
+      "name": "Google Play",
+      "plugin_version": "0.1.0",
+      "publisher": "Apito",
+      "releases": [
+        {
+          "arch": "amd64",
+          "os": "darwin",
+          "sha256": "9cb3501527afd8fff3e96becdf5ae2087c63cbd2e84f88b4b98189da6b54d1ca",
+          "size": 6105766,
+          "url": "https://github.com/apito-io/hc-google-play-payment-plugin/releases/download/v0.1.0/hc-google-play-payment-plugin-v0.1.0-darwin-amd64.zip"
+        },
+        {
+          "arch": "arm64",
+          "os": "darwin",
+          "sha256": "d2f08e9806b6719c10d2f23d472f8dee1d534cb704638eab1213008825617b70",
+          "size": 5664368,
+          "url": "https://github.com/apito-io/hc-google-play-payment-plugin/releases/download/v0.1.0/hc-google-play-payment-plugin-v0.1.0-darwin-arm64.zip"
+        },
+        {
+          "arch": "amd64",
+          "os": "linux",
+          "sha256": "80d2d3031f9956b0df823fe2b44d1fe177c0528aec855ad35c588b7d817c3803",
+          "size": 5979565,
+          "url": "https://github.com/apito-io/hc-google-play-payment-plugin/releases/download/v0.1.0/hc-google-play-payment-plugin-v0.1.0-linux-amd64.zip"
+        },
+        {
+          "arch": "arm64",
+          "os": "linux",
+          "sha256": "06897d351f2c0d92ca1f4eab263b8f535fb29b36cd20641846f8998377fc18c8",
+          "size": 5420016,
+          "url": "https://github.com/apito-io/hc-google-play-payment-plugin/releases/download/v0.1.0/hc-google-play-payment-plugin-v0.1.0-linux-arm64.zip"
+        },
+        {
+          "arch": "amd64",
+          "os": "windows",
+          "sha256": "8da9a719471f376ebfb8b6ebfd22575ff6e0b91299950bc595e3f7e23e635e40",
+          "size": 6140850,
+          "url": "https://github.com/apito-io/hc-google-play-payment-plugin/releases/download/v0.1.0/hc-google-play-payment-plugin-v0.1.0-windows-amd64.zip"
+        },
+        {
+          "arch": "arm64",
+          "os": "windows",
+          "sha256": "04e1bd5fb6e177a4806df22f88c062af3bdbf63da12c06c7e2dff012209bd91c",
+          "size": 5496360,
+          "url": "https://github.com/apito-io/hc-google-play-payment-plugin/releases/download/v0.1.0/hc-google-play-payment-plugin-v0.1.0-windows-arm64.zip"
+        }
+      ],
+      "repository": "https://github.com/apito-io/hc-google-play-payment-plugin",
+      "runtime": {
+        "binary_path": "hc-google-play-payment-plugin",
+        "capabilities": [
+          "project.graphql",
+          "project.rest",
+          "console.settings"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-google-play-payment-plugin",
+        "version": "0.1.0"
+      },
+      "status": "available",
+      "tags": [
+        "google-play",
+        "payment",
+        "subscription"
+      ],
+      "trust": "official"
+    },
+    {
       "capabilities": [
         "system.graphql",
         "system.rest"
@@ -630,6 +851,92 @@
         "monitoring",
         "observability",
         "alerts"
+      ],
+      "trust": "official"
+    },
+    {
+      "approval": {
+        "reviewed_at": "2026-11-09",
+        "reviewed_by": "apito"
+      },
+      "capabilities": [
+        "project.graphql",
+        "project.rest",
+        "console.settings"
+      ],
+      "category": "payments",
+      "contributions": {
+        "api": {
+          "mutations": [
+            {
+              "description": "Project Paddle billing is not implemented",
+              "name": "paddleInitialize"
+            },
+            {
+              "description": "Project Paddle verify is not implemented",
+              "name": "paddleVerify"
+            },
+            {
+              "description": "Project Paddle webhook is not implemented",
+              "name": "paddleWebhook"
+            },
+            {
+              "description": "Project Paddle cancel is not implemented",
+              "name": "paddleCancel"
+            }
+          ],
+          "rest": [
+            {
+              "description": "Non-secret project Paddle flags",
+              "method": "GET",
+              "path": "/config"
+            }
+          ],
+          "scope": "project"
+        },
+        "ui": {
+          "navigation": [
+            {
+              "hidden": true,
+              "label": "Paddle",
+              "settings": true
+            }
+          ],
+          "ui_available": true
+        }
+      },
+      "description": "Project Paddle vendor settings. Billing calls are not implemented yet.",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "",
+      "id": "hc-paddle-payment-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "Stores a project's Paddle vendor id and auth code. Webhook, verify, and cancel return not implemented. This is not Apito Cloud billing.",
+      "name": "Paddle",
+      "plugin_version": "0.1.0",
+      "publisher": "Apito",
+      "releases": [],
+      "repository": "https://github.com/apito-io/hc-paddle-payment-plugin",
+      "runtime": {
+        "binary_path": "hc-paddle-payment-plugin",
+        "capabilities": [
+          "project.graphql",
+          "project.rest",
+          "console.settings"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-paddle-payment-plugin",
+        "version": "0.1.0"
+      },
+      "status": "available",
+      "tags": [
+        "paddle",
+        "payment"
       ],
       "trust": "official"
     },
