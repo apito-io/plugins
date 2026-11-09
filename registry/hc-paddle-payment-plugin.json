@@ -7,10 +7,17 @@
   "description": "Project Paddle vendor settings. Billing calls are not implemented yet.",
   "long_description": "Stores a project's Paddle vendor id and auth code. Webhook, verify, and cancel return not implemented. This is not Apito Cloud billing.",
   "icon": "",
-  "tags": ["paddle", "payment"],
+  "tags": [
+    "paddle",
+    "payment"
+  ],
   "category": "payments",
   "language": "go",
-  "capabilities": ["project.graphql", "project.rest", "console.settings"],
+  "capabilities": [
+    "project.graphql",
+    "project.rest",
+    "console.settings"
+  ],
   "engine_semver": ">=2.4.0",
   "plugin_version": "0.1.0",
   "trust": "official",
@@ -20,7 +27,11 @@
     "id": "hc-paddle-payment-plugin",
     "version": "0.1.0",
     "binary_path": "hc-paddle-payment-plugin",
-    "capabilities": ["project.graphql", "project.rest", "console.settings"],
+    "capabilities": [
+      "project.graphql",
+      "project.rest",
+      "console.settings"
+    ],
     "handshake": {
       "protocol_version": 1,
       "magic_cookie_key": "APITO_PLUGIN",
@@ -31,20 +42,88 @@
     "api": {
       "scope": "project",
       "mutations": [
-        { "name": "paddleInitialize", "description": "Project Paddle billing is not implemented" },
-        { "name": "paddleVerify", "description": "Project Paddle verify is not implemented" },
-        { "name": "paddleWebhook", "description": "Project Paddle webhook is not implemented" },
-        { "name": "paddleCancel", "description": "Project Paddle cancel is not implemented" }
+        {
+          "name": "paddleInitialize",
+          "description": "Project Paddle billing is not implemented"
+        },
+        {
+          "name": "paddleVerify",
+          "description": "Project Paddle verify is not implemented"
+        },
+        {
+          "name": "paddleWebhook",
+          "description": "Project Paddle webhook is not implemented"
+        },
+        {
+          "name": "paddleCancel",
+          "description": "Project Paddle cancel is not implemented"
+        }
       ],
       "rest": [
-        { "method": "GET", "path": "/config", "description": "Non-secret project Paddle flags" }
+        {
+          "method": "GET",
+          "path": "/config",
+          "description": "Non-secret project Paddle flags"
+        }
       ]
     },
     "ui": {
       "ui_available": true,
-      "navigation": [{ "hidden": true, "settings": true, "label": "Paddle" }]
+      "navigation": [
+        {
+          "hidden": true,
+          "settings": true,
+          "label": "Paddle"
+        }
+      ]
     }
   },
-  "releases": [],
-  "approval": { "reviewed_by": "apito", "reviewed_at": "2026-11-09" }
+  "releases": [
+    {
+      "os": "darwin",
+      "arch": "amd64",
+      "url": "https://github.com/apito-io/hc-paddle-payment-plugin/releases/download/v0.1.0/hc-paddle-payment-plugin-v0.1.0-darwin-amd64.zip",
+      "size": 5033775,
+      "sha256": "950555b003f0148ccc0227b9bb87801dadf514a932f6fd66d5664fc5232d3f47"
+    },
+    {
+      "os": "darwin",
+      "arch": "arm64",
+      "url": "https://github.com/apito-io/hc-paddle-payment-plugin/releases/download/v0.1.0/hc-paddle-payment-plugin-v0.1.0-darwin-arm64.zip",
+      "size": 4662594,
+      "sha256": "00195d785bca7adb21109d203fe10f5257994b649b2dde6c24d79b43bbc80eb1"
+    },
+    {
+      "os": "linux",
+      "arch": "amd64",
+      "url": "https://github.com/apito-io/hc-paddle-payment-plugin/releases/download/v0.1.0/hc-paddle-payment-plugin-v0.1.0-linux-amd64.zip",
+      "size": 4922528,
+      "sha256": "5ae579df962083befc3bf84eebb064c639a3f878d1f7f559d72af1454c6707b8"
+    },
+    {
+      "os": "linux",
+      "arch": "arm64",
+      "url": "https://github.com/apito-io/hc-paddle-payment-plugin/releases/download/v0.1.0/hc-paddle-payment-plugin-v0.1.0-linux-arm64.zip",
+      "size": 4457298,
+      "sha256": "9d5a2819f27cc6fba59b4c18cad607df2d28171189d22057b04b35f13cb74abd"
+    },
+    {
+      "os": "windows",
+      "arch": "amd64",
+      "url": "https://github.com/apito-io/hc-paddle-payment-plugin/releases/download/v0.1.0/hc-paddle-payment-plugin-v0.1.0-windows-amd64.zip",
+      "size": 5059065,
+      "sha256": "3af6e230e94102d17209fdc7061fa7b056df3ba1677bf23ae3139582dc21698d"
+    },
+    {
+      "os": "windows",
+      "arch": "arm64",
+      "url": "https://github.com/apito-io/hc-paddle-payment-plugin/releases/download/v0.1.0/hc-paddle-payment-plugin-v0.1.0-windows-arm64.zip",
+      "size": 4526711,
+      "sha256": "54cfb01e32c86bf3d0bd6734838bb89077fd275c38151f774fb417b36ee2ae39"
+    }
+  ],
+  "approval": {
+    "reviewed_by": "apito",
+    "reviewed_at": "2026-11-09"
+  }
 }
