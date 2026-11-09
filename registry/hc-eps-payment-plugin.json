@@ -1,0 +1,83 @@
+{
+  "id": "hc-eps-payment-plugin",
+  "name": "EPS",
+  "publisher": "Apito",
+  "repository": "https://github.com/apito-io/hc-eps-payment-plugin",
+  "license": "Apache-2.0",
+  "description": "EPS hosted checkout for SaaS tenant plans. Credentials stay on the project.",
+  "long_description": "The engine install is shared. Each project activates EPS and stores its own username, password, hash key, merchant id, and store id. The public review page is rendered by the plugin. The shop return URL stays on the checkout.",
+  "icon": "",
+  "tags": [
+    "eps",
+    "payment",
+    "checkout"
+  ],
+  "category": "payments",
+  "language": "go",
+  "capabilities": [
+    "project.graphql",
+    "project.rest",
+    "console.settings"
+  ],
+  "engine_semver": ">=2.4.0",
+  "plugin_version": "0.1.0",
+  "trust": "official",
+  "status": "available",
+  "documentation_url": "/docs/platform/plugins/",
+  "runtime": {
+    "id": "hc-eps-payment-plugin",
+    "version": "0.1.0",
+    "binary_path": "hc-eps-payment-plugin",
+    "capabilities": [
+      "project.graphql",
+      "project.rest",
+      "console.settings"
+    ],
+    "handshake": {
+      "protocol_version": 1,
+      "magic_cookie_key": "APITO_PLUGIN",
+      "magic_cookie_value": "apito_plugin_magic_cookie_v1"
+    }
+  },
+  "contributions": {
+    "api": {
+      "scope": "project",
+      "mutations": [
+        {
+          "name": "epsInitialize",
+          "description": "Start EPS hosted checkout for this project"
+        },
+        {
+          "name": "epsVerify",
+          "description": "Verify an EPS merchant transaction for this project"
+        },
+        {
+          "name": "epsReview",
+          "description": "Render the public EPS review page for this project"
+        }
+      ],
+      "rest": [
+        {
+          "method": "GET",
+          "path": "/config",
+          "description": "Non-secret EPS configuration flags"
+        }
+      ]
+    },
+    "ui": {
+      "ui_available": true,
+      "navigation": [
+        {
+          "hidden": true,
+          "settings": true,
+          "label": "EPS"
+        }
+      ]
+    }
+  },
+  "releases": [],
+  "approval": {
+    "reviewed_by": "apito",
+    "reviewed_at": "2026-11-09"
+  }
+}
