@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-09T09:03:44Z",
+  "generated_at": "2026-11-09T09:05:45Z",
   "plugins": [
     {
       "capabilities": [
@@ -397,7 +397,50 @@
       "name": "Custom",
       "plugin_version": "0.1.0",
       "publisher": "Apito",
-      "releases": [],
+      "releases": [
+        {
+          "arch": "amd64",
+          "os": "darwin",
+          "sha256": "74e5279762ea235699bc9d382e5d71365b2f6442e884e3ba69c6faef8cfea81d",
+          "size": 5274806,
+          "url": "https://github.com/apito-io/hc-custom-payment-plugin/releases/download/v0.1.0/hc-custom-payment-plugin-v0.1.0-darwin-amd64.zip"
+        },
+        {
+          "arch": "arm64",
+          "os": "darwin",
+          "sha256": "e7e3d9a0370046cccef924461fecb3002e81a530b42299a2fd596b1a22c4ec82",
+          "size": 4893535,
+          "url": "https://github.com/apito-io/hc-custom-payment-plugin/releases/download/v0.1.0/hc-custom-payment-plugin-v0.1.0-darwin-arm64.zip"
+        },
+        {
+          "arch": "amd64",
+          "os": "linux",
+          "sha256": "8352f1f710cb08d4d64cc94413f1d0431024a2f566c2bb0dd265fa91d2a6f2b4",
+          "size": 5162657,
+          "url": "https://github.com/apito-io/hc-custom-payment-plugin/releases/download/v0.1.0/hc-custom-payment-plugin-v0.1.0-linux-amd64.zip"
+        },
+        {
+          "arch": "arm64",
+          "os": "linux",
+          "sha256": "0a60e97ce332aa166bcd38ce94320f5ecaef8561d7d353542fbf6cb06648b3a4",
+          "size": 4680064,
+          "url": "https://github.com/apito-io/hc-custom-payment-plugin/releases/download/v0.1.0/hc-custom-payment-plugin-v0.1.0-linux-arm64.zip"
+        },
+        {
+          "arch": "amd64",
+          "os": "windows",
+          "sha256": "3ed4c7bc54dafd4f881258e2380963ed97380c1ccb94800633709cab95e28c3c",
+          "size": 5303831,
+          "url": "https://github.com/apito-io/hc-custom-payment-plugin/releases/download/v0.1.0/hc-custom-payment-plugin-v0.1.0-windows-amd64.zip"
+        },
+        {
+          "arch": "arm64",
+          "os": "windows",
+          "sha256": "485b1c30a9215875d9c883496963954c2dbbe1a4a1bd3665a90bc11a5d1d3868",
+          "size": 4749945,
+          "url": "https://github.com/apito-io/hc-custom-payment-plugin/releases/download/v0.1.0/hc-custom-payment-plugin-v0.1.0-windows-arm64.zip"
+        }
+      ],
       "repository": "https://github.com/apito-io/hc-custom-payment-plugin",
       "runtime": {
         "binary_path": "hc-custom-payment-plugin",
