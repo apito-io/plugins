@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-04T13:22:11Z",
+  "generated_at": "2026-11-09T08:01:45Z",
   "plugins": [
     {
       "capabilities": [
@@ -462,6 +462,132 @@
         "sendgrid",
         "mailgun",
         "smtp"
+      ],
+      "trust": "official"
+    },
+    {
+      "approval": {
+        "reviewed_at": "2026-11-09",
+        "reviewed_by": "apito"
+      },
+      "capabilities": [
+        "project.graphql",
+        "project.rest",
+        "console.settings"
+      ],
+      "category": "payments",
+      "contributions": {
+        "api": {
+          "mutations": [
+            {
+              "description": "Start EPS hosted checkout for this project",
+              "name": "epsInitialize"
+            },
+            {
+              "description": "Verify an EPS merchant transaction for this project",
+              "name": "epsVerify"
+            },
+            {
+              "description": "Render the public EPS review page for this project",
+              "name": "epsReview"
+            }
+          ],
+          "rest": [
+            {
+              "description": "Non-secret EPS configuration flags",
+              "method": "GET",
+              "path": "/config"
+            }
+          ],
+          "scope": "project"
+        },
+        "ui": {
+          "navigation": [
+            {
+              "hidden": true,
+              "label": "EPS",
+              "settings": true
+            }
+          ],
+          "ui_available": true
+        }
+      },
+      "description": "EPS hosted checkout for SaaS tenant plans. Credentials stay on the project.",
+      "documentation_url": "/docs/platform/plugins/",
+      "engine_semver": "\u003e=2.4.0",
+      "icon": "",
+      "id": "hc-eps-payment-plugin",
+      "language": "go",
+      "license": "Apache-2.0",
+      "long_description": "The engine install is shared. Each project activates EPS and stores its own username, password, hash key, merchant id, and store id. The public review page is rendered by the plugin. The shop return URL stays on the checkout.",
+      "name": "EPS",
+      "plugin_version": "0.1.0",
+      "publisher": "Apito",
+      "releases": [
+        {
+          "arch": "amd64",
+          "os": "darwin",
+          "sha256": "29b02824905b7ffa05d0bb0df69fd6bfeee02d32bc996d9b828c77310c0e3bc4",
+          "size": 5292435,
+          "url": "https://github.com/apito-io/hc-eps-payment-plugin/releases/download/v0.1.0/hc-eps-payment-plugin-v0.1.0-darwin-amd64.zip"
+        },
+        {
+          "arch": "arm64",
+          "os": "darwin",
+          "sha256": "4fb072762aa5deff57e0b9630fe93f660926f8e598d717b39be2da1de363c44a",
+          "size": 4908918,
+          "url": "https://github.com/apito-io/hc-eps-payment-plugin/releases/download/v0.1.0/hc-eps-payment-plugin-v0.1.0-darwin-arm64.zip"
+        },
+        {
+          "arch": "amd64",
+          "os": "linux",
+          "sha256": "bfdc1b9ecde1c2850b21950528072d99b86ea205410d850db206bb8e91234bbb",
+          "size": 5176911,
+          "url": "https://github.com/apito-io/hc-eps-payment-plugin/releases/download/v0.1.0/hc-eps-payment-plugin-v0.1.0-linux-amd64.zip"
+        },
+        {
+          "arch": "arm64",
+          "os": "linux",
+          "sha256": "48dbb15df7c485d14857c15ef5539084920c3bd419524f11a3667b6d7c26a702",
+          "size": 4692691,
+          "url": "https://github.com/apito-io/hc-eps-payment-plugin/releases/download/v0.1.0/hc-eps-payment-plugin-v0.1.0-linux-arm64.zip"
+        },
+        {
+          "arch": "amd64",
+          "os": "windows",
+          "sha256": "1f672e480f21d5147a186d365903239207af566632ea07e838b611e69700ec4b",
+          "size": 5323270,
+          "url": "https://github.com/apito-io/hc-eps-payment-plugin/releases/download/v0.1.0/hc-eps-payment-plugin-v0.1.0-windows-amd64.zip"
+        },
+        {
+          "arch": "arm64",
+          "os": "windows",
+          "sha256": "e1a645aac99eeb4377074e5b7f77022a6661a4ecbd47d7b34fe99f3bc3c84091",
+          "size": 4764649,
+          "url": "https://github.com/apito-io/hc-eps-payment-plugin/releases/download/v0.1.0/hc-eps-payment-plugin-v0.1.0-windows-arm64.zip"
+        }
+      ],
+      "repository": "https://github.com/apito-io/hc-eps-payment-plugin",
+      "runtime": {
+        "binary_path": "hc-eps-payment-plugin",
+        "capabilities": [
+          "project.graphql",
+          "project.rest",
+          "console.settings"
+        ],
+        "handshake": {
+          "magic_cookie_key": "APITO_PLUGIN",
+          "magic_cookie_value": "apito_plugin_magic_cookie_v1",
+          "protocol_version": 1
+        },
+        "id": "hc-eps-payment-plugin",
+        "version": "0.1.0"
+      },
+      "status": "available",
+      "tags": [
+        "eps",
+        "payment",
+        "checkout"
       ],
       "trust": "official"
     },

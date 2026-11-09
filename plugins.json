@@ -98,6 +98,20 @@
     },
     {
       "capabilities": [
+        "project.graphql",
+        "project.rest",
+        "console.settings"
+      ],
+      "description": "EPS hosted checkout for SaaS tenant plans. Credentials stay on the project.",
+      "github_url": "https://github.com/apito-io/hc-eps-payment-plugin",
+      "id": "hc-eps-payment-plugin",
+      "is_official": true,
+      "name": "EPS",
+      "status": "available",
+      "version": "0.1.0"
+    },
+    {
+      "capabilities": [
         "system.graphql",
         "system.rest"
       ],
